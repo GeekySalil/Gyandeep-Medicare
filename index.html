@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyandeep Medicare Hospital | Premium Super-Speciality Centre Varanasi</title>
+    <meta name="description" content="Gyandeep Medicare Hospital is a Centre of Excellence in Varanasi specializing in Urology, Andrology, Dermatology, Hair Restoration, and Laser Treatments.">
+    <meta name="keywords" content="Gyandeep Medicare, Hospital Varanasi, Urologist Varanasi, Dr Puneet Singh, Dermatologist Varanasi, Dr Megha Singh, Hair Restoration, Laser Treatment">
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gyandeepmedicare.com/">
+    <meta property="og:title" content="Gyandeep Medicare Hospital | Premium Super-Speciality Centre Varanasi">
+    <meta property="og:description" content="Centre of Excellence in Varanasi specializing in Urology, Andrology, Dermatology, Hair Restoration, and Laser Treatments.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/gps-cs-s/APNQkAG5v1B68ktHCkwlBfi_PZTnrEHRG9s7ODNbjljTPCZMDxTIcnse5MCVDdRGJGkoQicx7yQ_gv9jLE0tcpPeyaeN1GkQe8K4r1zMz1XcRlcEJ5tCGpmBKfcmJXU9ESK-zjJC067o=s1360-w1360-h1020-rw">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/1.png">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ==========================================================================
+           CSS VARIABLES & RESET
+           ========================================================================== */
+        :root {
+            /* Color Palette */
+            --primary: #0A7A4B;
+            --primary-dark: #065a36;
+            --primary-light: #12a668;
+            --secondary: #E8B923;
+            --accent: #F4FFF8;
+            --bg: #E8F5EF;
+            --bg-alt: #D8ECE2;
+            --text-main: #1E293B;
+            --text-light: #64748B;
+            
+            /* Glassmorphism */
+            --glass-bg: rgba(232, 245, 239, 0.85);
+            --glass-border: rgba(10, 122, 75, 0.2);
+            --glass-shadow: 0 8px 32px 0 rgba(10, 122, 75, 0.1);
+            
+            /* Typography */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            
+            /* UI Elements */
+            --radius-lg: 20px;
+            --radius-md: 12px;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --shadow-soft: 0 10px 30px rgba(0,0,0,0.05);
+            --shadow-hover: 0 20px 40px rgba(10, 122, 75, 0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; font-size: 16px; }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--text-main);
+            background-color: var(--bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        button { cursor: pointer; border: none; outline: none; font-family: var(--font-body); }
+
+        /* Generic Section Padding */
+        section { padding: 100px 5%; position: relative; z-index: 2; }
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .section-title p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================================================
+           BACKGROUND MEDICAL ICONS (JS Generated)
+           ========================================================================== */
+        #bg-icons-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .bg-icon {
+            position: absolute;
+            color: var(--primary);
+            opacity: 0.05;
+            animation: floatIcon 20s infinite linear;
+        }
+        @keyframes floatIcon {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.09; }
+            90% { opacity: 0.09; }
+            100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* ==========================================================================
+           REVEAL ANIMATIONS
+           ========================================================================== */
+        .reveal { opacity: 0; transform: translateY(40px); transition: 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal.fade-left { transform: translateX(-50px); }
+        .reveal.fade-left.active { transform: translateX(0); }
+        .reveal.fade-right { transform: translateX(50px); }
+        .reveal.fade-right.active { transform: translateX(0); }
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+
+        /* ==========================================================================
+           BUTTONS
+           ========================================================================== */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 14px 28px; border-radius: 50px; font-weight: 600;
+            transition: var(--transition); letter-spacing: 0.5px;
+            gap: 10px; overflow: hidden; position: relative; z-index: 1;
+        }
+        .btn::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 0%; height: 100%;
+            background: rgba(255,255,255,0.2); transition: var(--transition); z-index: -1;
+        }
+        .btn:hover::before { width: 100%; }
+        
+        .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 15px rgba(10,122,75,0.3); }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(10,122,75,0.4); }
+        
+        .btn-secondary { background: var(--secondary); color: var(--text-main); }
+        .btn-secondary:hover { transform: translateY(-3px); }
+        
+        .btn-outline { border: 2px solid var(--primary); color: var(--primary); background: transparent; }
+        .btn-outline:hover { background: var(--primary); color: white; }
+
+        /* ==========================================================================
+           TOP BAR & NAVBAR
+           ========================================================================== */
+        .top-bar {
+            background: var(--primary-dark);
+            color: white; padding: 8px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.9rem; z-index: 100; position: relative;
+        }
+        .top-bar-contact { display: flex; gap: 20px; }
+        .top-bar-contact a { display: flex; align-items: center; gap: 6px; }
+        .top-bar-contact a:hover { color: var(--secondary); }
+        
+        .navbar {
+            position: sticky; top: 0; left: 0; width: 100%;
+            background: var(--glass-bg); backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px); border-bottom: 1px solid var(--glass-border);
+            padding: 6px 5%; display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; transition: var(--transition);
+            box-shadow: var(--shadow-soft);
+        }
+        .nav-brand { display: flex; align-items: center; gap: 10px; }
+        .nav-logo img {
+            width: 36px; height: 36px; border-radius: 50%;
+            object-fit: cover; border: 2px solid var(--secondary);
+            background: white; display: block;
+        }
+        .nav-brand-text { display: flex; flex-direction: column; justify-content: center; }
+        .nav-brand-text h1 { font-size: 1.1rem; color: var(--primary); margin: 0; letter-spacing: 0.5px; }
+        
+        .nav-links { display: flex; gap: 20px; align-items: center; margin-left: auto; }
+        .nav-links li a {
+            font-weight: 500; color: var(--text-main); font-size: 0.9rem;
+            position: relative; padding: 5px 0;
+        }
+        .nav-links li a::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0;
+            height: 2px; background: var(--primary); transition: var(--transition);
+        }
+        .nav-links li a:hover::after, .nav-links li a.active::after { width: 100%; }
+        .nav-links li a:hover { color: var(--primary); }
+        
+        .mobile-menu-btn { display: none; font-size: 1.5rem; color: var(--primary); background: transparent; }
+
+        /* ==========================================================================
+           HERO SECTION
+           ========================================================================== */
+        .hero {
+            height: calc(100vh - 120px); min-height: 600px;
+            position: relative; padding: 0; overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .hero-slider {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1;
+        }
+        .slide {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0; transition: opacity 1.5s ease-in-out;
+            background-size: cover; background-position: center;
+        }
+        .slide.active { opacity: 1; }
+        .slide::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to right, rgba(10,122,75,0.8), rgba(0,0,0,0.5));
+        }
+        
+        .hero-content {
+            position: relative; z-index: 2; text-align: center; color: white;
+            max-width: 900px; padding: 0 5%;
+        }
+        .hero-content h1 { font-size: 4rem; color:antiquewhite; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(234, 239, 222, 0.3); }
+        .hero-content h2 { font-size: 1.8rem; color: var(--secondary); margin-bottom: 1.5rem; font-family: var(--font-body); font-weight: 300;}
+        .hero-content p { font-size: 1.1rem; margin-bottom: 2.5rem; opacity: 0.9; }
+        .hero-buttons { display: flex; gap: 20px; justify-content: center; }
+        
+        .scroll-indicator {
+            position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+            z-index: 2; color: white; display: flex; flex-direction: column; align-items: center; gap: 10px;
+            animation: bounce 2s infinite;
+        }
+        .mouse {
+            width: 24px; height: 36px; border: 2px solid white; border-radius: 12px; position: relative;
+        }
+        .wheel {
+            width: 4px; height: 8px; background: white; border-radius: 2px;
+            position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+            animation: scroll 1.5s infinite;
+        }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);} 40% {transform: translateY(-10px) translateX(-50%);} 60% {transform: translateY(-5px) translateX(-50%);} }
+        @keyframes scroll { 0% { top: 6px; opacity: 1; } 100% { top: 20px; opacity: 0; } }
+
+        /* ==========================================================================
+           TRUST SECTION
+           ========================================================================== */
+        .trust-section { background: var(--bg-alt); padding: 60px 5%; }
+        .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .trust-card {
+            background: var(--bg); padding: 30px; border-radius: var(--radius-md);
+            text-align: center; box-shadow: var(--shadow-soft); transition: var(--transition);
+            border-bottom: 4px solid var(--primary);
+        }
+        .trust-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); border-color: var(--secondary); }
+        .trust-icon {
+            width: 70px; height: 70px; background: var(--accent); color: var(--primary);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; margin: 0 auto 15px; transition: var(--transition);
+        }
+        .trust-card:hover .trust-icon { background: var(--primary); color: white; transform: rotateY(360deg); }
+        .trust-card h3 { font-size: 1.2rem; margin-bottom: 10px; font-family: var(--font-body); }
+
+        /* ==========================================================================
+           ABOUT SECTION
+           ========================================================================== */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-image { position: relative; }
+        .about-img-main { border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); width: 100%; }
+        .about-experience {
+            position: absolute; bottom: -20px; right: -20px; background: var(--secondary);
+            padding: 20px; border-radius: var(--radius-md); color: var(--text-main);
+            text-align: center; box-shadow: var(--shadow-hover);
+            animation: pulse 3s infinite;
+        }
+        .about-experience h3 { font-size: 2.5rem; margin: 0; color: var(--text-main); }
+        .about-content h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+        .about-content p { margin-bottom: 15px; font-size: 1.1rem; color: var(--text-light); }
+        .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; }
+        .about-features li { display: flex; align-items: center; gap: 10px; font-weight: 500; }
+        .about-features i { color: var(--primary); background: var(--accent); padding: 5px; border-radius: 50%; }
+
+        /* ==========================================================================
+           DOCTORS SECTION
+           ========================================================================== */
+        .doctors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 40px; }
+        .doc-card {
+            background: var(--bg); border-radius: var(--radius-lg); overflow: hidden;
+            box-shadow: var(--shadow-soft); transition: var(--transition);
+            border: 1px solid #eee;
+        }
+        .doc-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); }
+        .doc-img-wrapper { position: relative; overflow: hidden; height: 350px; background: var(--accent); }
+        .doc-img-wrapper img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: var(--transition); }
+        .doc-card:hover .doc-img-wrapper img { transform: scale(1.05); }
+        .doc-social {
+            position: absolute; bottom: 15px; left: 0; width: 100%; display: flex; justify-content: center;
+            gap: 10px; opacity: 0; transform: translateY(20px); transition: var(--transition);
+        }
+        .doc-card:hover .doc-social { opacity: 1; transform: translateY(0); }
+        .doc-social a {
+            width: 40px; height: 40px; background: var(--glass-bg); backdrop-filter: blur(5px);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: var(--primary); transition: var(--transition);
+        }
+        .doc-social a:hover { background: var(--primary); color: white; }
+        
+        .doc-info { padding: 30px; text-align: center; }
+        .doc-info h3 { font-size: 1.8rem; color: var(--primary); margin-bottom: 5px; }
+        .doc-title { color: var(--secondary); font-weight: 600; margin-bottom: 15px; display: block; }
+        .doc-qualifications { font-size: 0.9rem; color: var(--text-light); margin-bottom: 20px; font-weight: 500;}
+        .doc-specialities {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 20px;
+        }
+        .doc-specialities span {
+            background: var(--accent); color: var(--primary-dark); font-size: 0.85rem;
+            padding: 5px 12px; border-radius: 20px; font-weight: 500;
+        }
+        .doc-timings { background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: left; font-size: 0.9rem; }
+        .doc-timings p { display: flex; justify-content: space-between; margin-bottom: 5px; border-bottom: 1px dashed #ccc; padding-bottom: 5px;}
+        .doc-timings p:last-child { margin-bottom: 0; border-bottom: none; padding-bottom: 0;}
+
+        /* ==========================================================================
+           INTERACTIVE SPECIALITIES
+           ========================================================================== */
+        .specialities-section { background: var(--bg-alt); }
+        .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 30px; }
+        
+        .spec-card {
+            background: var(--bg); border-radius: var(--radius-md); padding: 30px;
+            height: 140px; overflow: hidden; position: relative;
+            box-shadow: var(--shadow-soft); transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05); cursor: pointer;
+            display: flex; flex-direction: column; justify-content: flex-start;
+        }
+        .spec-header { display: flex; align-items: center; gap: 20px; transition: var(--transition); }
+        .spec-icon {
+            width: 60px; height: 60px; background: var(--accent); color: var(--primary);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; transition: var(--transition); flex-shrink: 0;
+        }
+        .spec-header h3 { font-size: 1.4rem; font-family: var(--font-body); margin: 0; transition: var(--transition);}
+        
+        .spec-content {
+            opacity: 0; transform: translateY(20px); transition: all 0.3s ease;
+            margin-top: 20px; flex-grow: 1; display: flex; flex-direction: column;
+        }
+        .spec-content p { color: rgba(255,255,255,0.9); font-size: 0.95rem; margin-bottom: 20px; }
+        .spec-btn { margin-top: auto; align-self: flex-start; color: white; border-color: rgba(255,255,255,0.5); }
+        .spec-btn:hover { background: white; color: var(--primary); }
+
+        /* Hover State Logic */
+        .spec-card:hover, .spec-card:focus-within {
+            height: 340px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            box-shadow: 0 20px 40px rgba(10,122,75,0.3);
+            transform: translateY(-5px);
+        }
+        .spec-card:hover .spec-header h3 { color: white; }
+        .spec-card:hover .spec-icon { background: rgba(255,255,255,0.2); color: white; transform: scale(1.1); }
+        .spec-card:hover .spec-content { opacity: 1; transform: translateY(0); transition-delay: 0.15s; }
+
+        /* ==========================================================================
+           TREATMENTS TABS
+           ========================================================================== */
+        .treatments-container { display: flex; gap: 40px; background: var(--bg); border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); padding: 40px; }
+        .t-tabs { flex: 0 0 250px; display: flex; flex-direction: column; gap: 10px; border-right: 1px solid #eee; padding-right: 20px; }
+        .t-tab-btn {
+            padding: 15px 20px; text-align: left; background: transparent; border: none;
+            border-radius: 8px; font-size: 1.1rem; font-weight: 500; color: var(--text-main);
+            transition: var(--transition); border-left: 3px solid transparent;
+        }
+        .t-tab-btn.active, .t-tab-btn:hover { background: var(--accent); color: var(--primary); border-left-color: var(--primary); }
+        
+        .t-content-area { flex-grow: 1; }
+        .t-pane { display: none; animation: fadeIn 0.5s ease; }
+        .t-pane.active { display: block; }
+        .t-pane h3 { font-size: 2rem; color: var(--primary); margin-bottom: 20px; border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
+        .t-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .t-list li { display: flex; align-items: center; gap: 10px; padding: 10px; background: #f8fafc; border-radius: 8px; transition: var(--transition);}
+        .t-list li:hover { background: var(--accent); transform: translateX(5px); }
+        .t-list i { color: var(--secondary); font-size: 1.2rem; }
+        @keyframes fadeIn { from {opacity:0; transform: translateY(10px);} to {opacity:1; transform:translateY(0);} }
+
+        /* ==========================================================================
+           GALLERY
+           ========================================================================== */
+        .gallery-section { background: #111; color: white; }
+        .gallery-section .section-title h2 { color: white; }
+        .gallery-filter { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 40px; }
+        .g-btn {
+            background: transparent; border: 1px solid rgba(255,255,255,0.3); color: white;
+            padding: 8px 20px; border-radius: 30px; transition: var(--transition);
+        }
+        .g-btn.active, .g-btn:hover { background: var(--primary); border-color: var(--primary); }
+        
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 20px; }
+        .g-item { position: relative; overflow: hidden; border-radius: 12px; aspect-ratio: 4/3; cursor: pointer; }
+        .g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .g-overlay {
+            position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            opacity: 0; transition: opacity 0.4s ease; display: flex; align-items: flex-end; padding: 20px;
+        }
+        .g-item:hover img { transform: scale(1.1); }
+        .g-item:hover .g-overlay { opacity: 1; }
+        .g-overlay span { color: white; font-weight: 500; font-size: 1.1rem; transform: translateY(20px); transition: 0.4s ease; }
+        .g-item:hover .g-overlay span { transform: translateY(0); }
+
+        /* ==========================================================================
+           REVIEWS (Scroll Snap Carousel)
+           ========================================================================== */
+        .reviews-section { background: var(--accent); overflow: hidden; }
+        .reviews-wrapper {
+            display: flex; gap: 30px; overflow-x: auto; padding: 20px 5%; scroll-snap-type: x mandatory;
+            scrollbar-width: none; /* Firefox */
+        }
+        .reviews-wrapper::-webkit-scrollbar { display: none; /* Chrome */ }
+        .review-card {
+            flex: 0 0 calc(33.333% - 20px); background: var(--bg); padding: 30px; border-radius: var(--radius-md);
+            scroll-snap-align: center; box-shadow: var(--shadow-soft); border-top: 4px solid var(--secondary);
+        }
+        .stars { color: #FFB800; margin-bottom: 15px; font-size: 1.2rem; }
+        .review-text { font-style: italic; color: var(--text-light); margin-bottom: 20px; }
+        .reviewer { font-weight: 600; color: var(--text-main); display: flex; align-items: center; gap: 10px; }
+        .reviewer::before { content:'G'; display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; background:#4285F4; color:white; border-radius:50%; font-weight:bold; font-size:14px; }
+
+        /* ==========================================================================
+           APPOINTMENT FORM
+           ========================================================================== */
+        .appointment-wrapper {
+            max-width: 800px; margin: 0 auto;
+            background: var(--bg); border-radius: var(--radius-lg); box-shadow: var(--shadow-hover); overflow: hidden;
+        }
+        
+        .app-form-container { padding: 40px; }
+        .app-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-group { display: flex; flex-direction: column; gap: 8px; }
+        .form-group.full { grid-column: 1 / -1; }
+        .form-group label { font-weight: 500; font-size: 0.9rem; color: var(--text-main); }
+        .form-control {
+            padding: 14px; border: 1px solid #ddd; border-radius: 8px; font-family: var(--font-body);
+            background: #f8fafc; transition: var(--transition); outline: none;
+        }
+        .form-control:focus { border-color: var(--primary); background: white; box-shadow: 0 0 0 3px rgba(10,122,75,0.1); }
+        textarea.form-control { resize: vertical; min-height: 100px; }
+
+        /* ==========================================================================
+           CONTACT & FOOTER
+           ========================================================================== */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        .contact-info-box { display: flex; gap: 20px; margin-bottom: 30px; }
+        .c-icon { width: 50px; height: 50px; background: var(--accent); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;}
+        .c-details h4 { margin-bottom: 5px; font-family: var(--font-body); }
+        .c-details p, .c-details a { color: var(--text-light); }
+        .map-container { border-radius: var(--radius-md); overflow: hidden; height: 100%; min-height: 400px; }
+        .map-container iframe { width: 100%; height: 100%; border: none; }
+
+        footer { background: #0b1120; color: white; padding: 60px 5% 20px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px;}
+        .footer-logo { width: 50px; height: 50px; margin-bottom: 15px; border-radius: 50%; border: 2px solid var(--secondary); background: white; object-fit: cover; display: block; }
+        .footer-brand h2 { color: var(--secondary); margin-bottom: 10px; font-size: 1.8rem; }
+        .footer-brand p { color: #94a3b8; margin-bottom: 20px; }
+        .footer-social { display: flex; gap: 15px; }
+        .footer-social a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; }
+        .footer-social a:hover { background: var(--primary); transform: translateY(-3px); }
+        .footer-links h4 { color: white; margin-bottom: 20px; font-size: 1.2rem; }
+        .footer-links ul { display: flex; flex-direction: column; gap: 10px; }
+        .footer-links a { color: #94a3b8; }
+        .footer-links a:hover { color: var(--secondary); padding-left: 5px; }
+        .footer-bottom { text-align: center; color: #64748b; font-size: 0.9rem; }
+
+        /* ==========================================================================
+           FLOATING ELEMENTS & CHATBOT
+           ========================================================================== */
+        .floating-action {
+            position: fixed; right: 20px; bottom: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 999;
+        }
+        .float-btn {
+            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: var(--transition);
+        }
+        .float-wa { background: #25D366; animation: pulse 2s infinite; }
+        .float-call { background: var(--primary); }
+        .float-btn:hover { transform: scale(1.1); }
+
+        /* Chatbot */
+        .chatbot-widget {
+            position: fixed; bottom: 20px; left: 20px; z-index: 1000;
+            width: 350px; transition: var(--transition);
+        }
+        .chat-toggler {
+            width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;
+            font-size: 24px; cursor: pointer; box-shadow: var(--shadow-hover); position: absolute; bottom: 0; left: 0; transition: var(--transition);
+        }
+        .chatbot-container {
+            position: absolute; bottom: 80px; left: 0; width: 100%; background: var(--glass-bg); backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border); border-radius: 20px; box-shadow: var(--shadow-hover);
+            overflow: hidden; opacity: 0; pointer-events: none; transform: translateY(20px) scale(0.9); transform-origin: bottom left; transition: var(--transition);
+        }
+        .chatbot-widget.active .chatbot-container { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
+        .chatbot-widget.active .chat-toggler i::before { content: "\f00d"; /* Times icon */ }
+        
+        .chat-header { background: var(--primary); padding: 15px 20px; color: white; display: flex; align-items: center; gap: 15px; }
+        .chat-header img { width: 40px; height: 40px; border-radius: 50%; background: white; padding: 5px; }
+        .chat-title h4 { font-family: var(--font-body); margin: 0; font-size: 1rem; color: white;}
+        .chat-title p { font-size: 0.8rem; margin: 0; opacity: 0.8; }
+        
+        .chat-body { height: 300px; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; background: rgba(255,255,255,0.5); }
+        .chat-msg { max-width: 80%; padding: 12px 16px; border-radius: 15px; font-size: 0.95rem; line-height: 1.4; }
+        .msg-bot { background: var(--accent); color: var(--primary-dark); align-self: flex-start; border-bottom-left-radius: 0; }
+        .msg-user { background: var(--primary); color: white; align-self: flex-end; border-bottom-right-radius: 0; }
+        
+        .chat-input { padding: 15px; background: white; border-top: 1px solid #eee; display: flex; gap: 10px; }
+        .chat-input input { flex-grow: 1; border: none; outline: none; background: #f0f2f5; padding: 10px 15px; border-radius: 20px; font-family: var(--font-body); }
+        .chat-input button { background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+
+        /* ==========================================================================
+           RESPONSIVE DESIGN
+           ========================================================================== */
+        @media (max-width: 991px) {
+            .hero-content h1 { font-size: 3rem; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .t-tabs { flex-direction: row; overflow-x: auto; flex: auto; border-right: none; border-bottom: 1px solid #eee; padding-bottom: 10px; padding-right: 0;}
+            .t-tab-btn { border-left: none; border-bottom: 3px solid transparent; white-space: nowrap; }
+            .t-tab-btn.active { border-left: none; border-bottom-color: var(--primary); }
+            .treatments-container { flex-direction: column; padding: 20px; }
+            .review-card { flex: 0 0 calc(50% - 15px); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            section { padding: 60px 5%; }
+            .about-features { grid-template-columns: 1fr; }
+            .t-list { grid-template-columns: 1fr; }
+            .top-bar { display: none; }
+            .nav-links {
+                position: fixed; top: 60px; left: -100%; width: 100%; height: calc(100vh - 60px);
+                background: var(--bg); flex-direction: column; align-items: center; padding-top: 50px;
+                transition: var(--transition); margin-left: 0;
+            }
+            .nav-links.active { left: 0; }
+            .mobile-menu-btn { display: block; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-content h2 { font-size: 1.2rem; }
+            .hero-buttons { flex-direction: column; }
+            .app-form { grid-template-columns: 1fr; }
+            .review-card { flex: 0 0 100%; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .chatbot-widget { width: calc(100% - 40px); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Animated Medical Icons Container -->
+    <div id="bg-icons-container"></div>
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <div class="top-bar-contact">
+            <a href="tel:05422366105"><i class="fas fa-phone-alt"></i> 0542-2366105 / 107</a>
+            <a href="https://wa.me/918003767830" target="_blank"><i class="fab fa-whatsapp"></i> +91 8003767830</a>
+        </div>
+        <div class="top-bar-address">
+            <i class="fas fa-map-marker-alt"></i> Nagwa, Samne Ghat, Varanasi
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="nav-brand">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="Gyandeep Medicare Logo">
+            </div>
+            <div class="nav-brand-text">
+                <h1>Gyandeep Medicare</h1>
+            </div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#specialists">Doctors</a></li>
+            <li><a href="#treatments">Treatments</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="#appointment" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem; display: none;">Book Now</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-slider" id="heroSlider">
+            <!-- Background Images handled by JS -->
+            <div class="slide active" style="background-image: url('images/18.png');"></div>
+            <div class="slide" style="background-image: url('images/9.png');"></div>
+            <div class="slide" style="background-image: url('images/10.png');"></div>
+            <div class="slide" style="background-image: url('images/2.png');"></div>
+            <div class="slide" style="background-image: url('images/11.png');"></div>
+        </div>
+        <div class="hero-content reveal active">
+            <h1>Gyandeep Medicare Hospital</h1>
+            <h2>Advanced Urology, Dermatology, Hair & Laser Care</h2>
+            <p>Providing expert medical care through advanced treatments, experienced specialists, and modern healthcare solutions for patients across Varanasi.</p>
+            <div class="hero-buttons">
+                <a href="#appointment" class="btn btn-primary"><i class="far fa-calendar-check"></i> Book Appointment</a>
+                <a href="https://wa.me/918003767830" target="_blank" class="btn btn-outline" style="color: white; border-color: white;"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+            </div>
+        </div>
+        <!-- <div class="scroll-indicator">
+            <div class="mouse"><div class="wheel"></div></div>
+            <span style="font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;">Scroll</span>
+        </div> -->
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="trust-grid">
+            <div class="trust-card reveal fade-up stagger-1">
+                <div class="trust-icon"><i class="fas fa-award"></i></div>
+                <h3>Centre of Excellence</h3>
+            </div>
+            <div class="trust-card reveal fade-up stagger-2">
+                <div class="trust-icon"><i class="fas fa-user-md"></i></div>
+                <h3>Expert Specialists</h3>
+            </div>
+            <div class="trust-card reveal fade-up stagger-3">
+                <div class="trust-icon"><i class="fas fa-microscope"></i></div>
+                <h3>Advanced Treatments</h3>
+            </div>
+            <div class="trust-card reveal fade-up stagger-4">
+                <div class="trust-icon"><i class="fas fa-heartbeat"></i></div>
+                <h3>Patient-Centered Care</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-grid">
+            <div class="about-image reveal fade-left">
+                <img src="images/5.png" alt="Hospital Interior" class="about-img-main">
+                <div class="about-experience">
+                    <h3>20+</h3>
+                    <p style="margin:0; font-weight: 500;">Years of Trust</p>
+                </div>
+            </div>
+            <div class="about-content reveal fade-right">
+                <span style="color: var(--secondary); font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">About Us</span>
+                <h2>Setting New Standards in Healthcare</h2>
+                <p>Gyandeep Medicare Hospital is a leading healthcare centre located in Nagwa, Samne Ghat, Varanasi. We specialize in advanced urology, andrology, dermatology, hair restoration, laser treatments, and cosmetology services.</p>
+                <p>With experienced specialists, modern technology, and patient-focused care, the hospital provides comprehensive healthcare solutions tailored to individual needs. We are committed to delivering quality medical treatment with compassion, professionalism, and excellence.</p>
+                
+                <ul class="about-features">
+                    <li><i class="fas fa-check"></i> Modern Technology</li>
+                    <li><i class="fas fa-check"></i> Experienced Doctors</li>
+                    <li><i class="fas fa-check"></i> 24/7 Support</li>
+                    <li><i class="fas fa-check"></i> Clean & Safe Environment</li>
+                </ul>
+                <br>
+                <a href="#specialities" class="btn btn-primary">Explore Our Specialities</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Our Specialists -->
+    <section id="specialists" style="background: var(--bg-alt);">
+        <div class="section-title reveal fade-up">
+            <h2>Meet Our Specialists</h2>
+            <p>Our team of highly qualified and experienced doctors are dedicated to providing the best possible care.</p>
+        </div>
+        <div class="doctors-grid">
+            <!-- Doctor 1 -->
+            <div class="doc-card reveal fade-up stagger-1">
+                <div class="doc-img-wrapper">
+                    <img src="images/17.png" alt="Dr. Puneet Singh">
+                    <div class="doc-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="doc-info">
+                    <h3>Dr. Puneet Singh</h3>
+                    <span class="doc-title">Urologist & Andrologist</span>
+                    <p class="doc-qualifications">MBBS, MS, M.Ch (Urology)</p>
+                    <div class="doc-specialities">
+                        <span>Kidney Stones</span>
+                        <span>Prostate Disorders</span>
+                        <span>Uroflowmetry</span>
+                        <span>Male Health</span>
+                    </div>
+                    <div class="doc-timings">
+                        <p><span>Mon - Sat</span> <span>4 PM - 7 PM</span></p>
+                        <p><span>Sunday</span> <span>10 AM - 4 PM</span></p>
+                    </div>
+                    <a href="#appointment" class="btn btn-outline" style="width: 100%;">Book Appointment</a>
+                </div>
+            </div>
+
+            <!-- Doctor 2 -->
+            <div class="doc-card reveal fade-up stagger-2">
+                <div class="doc-img-wrapper">
+                    <img src="images/16.png" alt="Dr. Megha Singh">
+                    <div class="doc-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="doc-info">
+                    <h3>Dr. Megha Singh</h3>
+                    <span class="doc-title">MD Skin & VD | Dermatologist</span>
+                    <p class="doc-qualifications">Hair & Laser Specialist</p>
+                    <div class="doc-specialities">
+                        <span>Acne Treatment</span>
+                        <span>PRP & GFC</span>
+                        <span>Laser Treatments</span>
+                        <span>Cosmetology</span>
+                    </div>
+                    <div class="doc-timings">
+                        <p><span>Mon - Sat</span> <span>4 PM - 7 PM</span></p>
+                        <p><span>Sunday</span> <span>10 AM - 4 PM</span></p>
+                    </div>
+                    <a href="#appointment" class="btn btn-outline" style="width: 100%;">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Specialities Section -->
+    <section id="specialities" class="specialities-section">
+        <div class="section-title reveal fade-up">
+            <h2>Our Super Specialities</h2>
+            <p>Comprehensive healthcare solutions using advanced technology and evidence-based medicine.</p>
+        </div>
+        <div class="spec-grid">
+            <!-- Spec 1 -->
+            <div class="spec-card reveal fade-up stagger-1">
+                <div class="spec-header">
+                    <div class="spec-icon"><i class="fas fa-droplet"></i></div>
+                    <h3>Urology</h3>
+                </div>
+                <div class="spec-content">
+                    <p>Advanced diagnosis and treatment of kidney stones, prostate disorders, urinary tract conditions, and urological cancers using modern techniques.</p>
+                    <a href="#treatments" class="btn btn-outline spec-btn">Learn More</a>
+                </div>
+            </div>
+            <!-- Spec 2 -->
+            <div class="spec-card reveal fade-up stagger-2">
+                <div class="spec-header">
+                    <div class="spec-icon"><i class="fas fa-male"></i></div>
+                    <h3>Andrology</h3>
+                </div>
+                <div class="spec-content">
+                    <p>Specialized care for male reproductive health, infertility, sexual health concerns, and hormonal disorders through expert consultation.</p>
+                    <a href="#treatments" class="btn btn-outline spec-btn">Learn More</a>
+                </div>
+            </div>
+            <!-- Spec 3 -->
+            <div class="spec-card reveal fade-up stagger-3">
+                <div class="spec-header">
+                    <div class="spec-icon"><i class="fas fa-hand-holding-water"></i></div>
+                    <h3>Dermatology</h3>
+                </div>
+                <div class="spec-content">
+                    <p>Comprehensive skin care solutions for acne, pigmentation, infections, allergies, chronic skin diseases, and aesthetic concerns.</p>
+                    <a href="#treatments" class="btn btn-outline spec-btn">Learn More</a>
+                </div>
+            </div>
+            <!-- Spec 4 -->
+            <div class="spec-card reveal fade-up stagger-4">
+                <div class="spec-header">
+                    <div class="spec-icon"><i class="fas fa-cut"></i></div>
+                    <h3>Hair Restoration</h3>
+                </div>
+                <div class="spec-content">
+                    <p>Advanced hair loss management using PRP therapy, GFC therapy, scalp treatments, and customized restoration plans.</p>
+                    <a href="#treatments" class="btn btn-outline spec-btn">Learn More</a>
+                </div>
+            </div>
+            <!-- Spec 5 -->
+            <div class="spec-card reveal fade-up stagger-1">
+                <div class="spec-header">
+                    <div class="spec-icon"><i class="fas fa-magic"></i></div>
+                    <h3>Laser Treatments</h3>
+                </div>
+                <div class="spec-content">
+                    <p>Modern laser solutions for skin rejuvenation, pigmentation correction, hair reduction, scar treatment, and cosmetic enhancement.</p>
+                    <a href="#treatments" class="btn btn-outline spec-btn">Learn More</a>
+                </div>
+            </div>
+            <!-- Spec 6 -->
+            <div class="spec-card reveal fade-up stagger-2">
+                <div class="spec-header">
+                    <div class="spec-icon"><i class="fas fa-spa"></i></div>
+                    <h3>Cosmetology</h3>
+                </div>
+                <div class="spec-content">
+                    <p>Personalized aesthetic treatments including chemical peels, anti-aging procedures, skin polishing, and advanced cosmetic care.</p>
+                    <a href="#treatments" class="btn btn-outline spec-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treatments Detail Section (Tabs) -->
+    <section id="treatments">
+        <div class="section-title reveal fade-up">
+            <h2>Detailed Treatments</h2>
+            <p>Explore our wide range of specialized medical procedures and therapies.</p>
+        </div>
+        <div class="treatments-container reveal fade-up">
+            <div class="t-tabs">
+                <button class="t-tab-btn active" data-target="t-urology">Urology & Andrology</button>
+                <button class="t-tab-btn" data-target="t-derma">Dermatology</button>
+                <button class="t-tab-btn" data-target="t-hair">Hair Treatments</button>
+                <button class="t-tab-btn" data-target="t-cosmo">Cosmetology & Laser</button>
+            </div>
+            <div class="t-content-area">
+                <!-- Urology -->
+                <div class="t-pane active" id="t-urology">
+                    <h3>Urology Services</h3>
+                    <ul class="t-list">
+                        <li><i class="fas fa-check-circle"></i> Kidney Stones Treatment</li>
+                        <li><i class="fas fa-check-circle"></i> Prostate Disorders (BPH)</li>
+                        <li><i class="fas fa-check-circle"></i> Urinary Tract Infections</li>
+                        <li><i class="fas fa-check-circle"></i> Urological Cancer Management</li>
+                        <li><i class="fas fa-check-circle"></i> Uroflowmetry</li>
+                        <li><i class="fas fa-check-circle"></i> Male Infertility</li>
+                        <li><i class="fas fa-check-circle"></i> Sexual Dysfunction</li>
+                    </ul>
+                </div>
+                <!-- Dermatology -->
+                <div class="t-pane" id="t-derma">
+                    <h3>Dermatology Services</h3>
+                    <ul class="t-list">
+                        <li><i class="fas fa-check-circle"></i> Acne & Scar Treatment</li>
+                        <li><i class="fas fa-check-circle"></i> Pigmentation & Melasma</li>
+                        <li><i class="fas fa-check-circle"></i> Eczema & Psoriasis</li>
+                        <li><i class="fas fa-check-circle"></i> Fungal Infections</li>
+                        <li><i class="fas fa-check-circle"></i> Wart & Mole Removal</li>
+                        <li><i class="fas fa-check-circle"></i> Skin Allergies</li>
+                    </ul>
+                </div>
+                <!-- Hair -->
+                <div class="t-pane" id="t-hair">
+                    <h3>Hair Restoration</h3>
+                    <ul class="t-list">
+                        <li><i class="fas fa-check-circle"></i> Advanced PRP Therapy</li>
+                        <li><i class="fas fa-check-circle"></i> GFC (Growth Factor Concentrate)</li>
+                        <li><i class="fas fa-check-circle"></i> Hair Fall Control</li>
+                        <li><i class="fas fa-check-circle"></i> Dandruff Treatment</li>
+                        <li><i class="fas fa-check-circle"></i> Scalp Rejuvenation</li>
+                        <li><i class="fas fa-check-circle"></i> Alopecia Management</li>
+                    </ul>
+                </div>
+                <!-- Cosmo -->
+                <div class="t-pane" id="t-cosmo">
+                    <h3>Cosmetology & Laser</h3>
+                    <ul class="t-list">
+                        <li><i class="fas fa-check-circle"></i> Laser Hair Reduction</li>
+                        <li><i class="fas fa-check-circle"></i> Chemical Peels</li>
+                        <li><i class="fas fa-check-circle"></i> Anti-Aging Procedures</li>
+                        <li><i class="fas fa-check-circle"></i> Micro Needling</li>
+                        <li><i class="fas fa-check-circle"></i> Mesotherapy</li>
+                        <li><i class="fas fa-check-circle"></i> Skin Rejuvenation</li>
+                        <li><i class="fas fa-check-circle"></i> Tattoo Removal</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Gallery -->
+    <section id="gallery" class="gallery-section">
+        <div class="section-title reveal fade-up">
+            <h2>Our Facility & Care</h2>
+            <p style="color: #ccc;">A glimpse into our modern hospital infrastructure and treatment centers.</p>
+        </div>
+        <div class="gallery-filter reveal fade-up">
+            <button class="g-btn active" data-filter="all">All</button>
+            <button class="g-btn" data-filter="exterior">Hospital</button>
+            <button class="g-btn" data-filter="urology">Urology</button>
+            <button class="g-btn" data-filter="derma">Skin & Hair</button>
+        </div>
+        <div class="gallery-grid reveal fade-up">
+            <!-- Items -> using unsplash placeholders matching context -->
+            <div class="g-item" data-category="exterior">
+                <img src="images/10.png" alt="Hospital Exterior">
+                <div class="g-overlay"><span>Modern Infrastructure</span></div>
+            </div>
+            <div class="g-item" data-category="urology">
+                <img src="images/13.png" alt="OT Room">
+                <div class="g-overlay"><span>Advanced Operation Theater</span></div>
+            </div>
+            <div class="g-item" data-category="derma">
+                <img src="images/4.png" alt="Derma Clinic">
+                <div class="g-overlay"><span>Dermatology Center</span></div>
+            </div>
+            <div class="g-item" data-category="urology">
+                <img src="images/8.png" alt="Lab">
+                <div class="g-overlay"><span>Diagnostic Labs</span></div>
+            </div>
+            <div class="g-item" data-category="derma">
+                <img src="images/19.png" alt="Laser Machine">
+                <div class="g-overlay"><span>Modern Laser Equipment</span></div>
+            </div>
+            <div class="g-item" data-category="exterior">
+                <img src="images/18.png" alt="Reception">
+                <div class="g-overlay"><span>Patient Waiting Area</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Reviews -->
+    <section id="reviews" class="reviews-section">
+        <div class="section-title reveal fade-up">
+            <h2>Patient Testimonials</h2>
+            <p>Read what our patients have to say about their experience at Gyandeep Medicare.</p>
+        </div>
+        <div class="reviews-wrapper reveal fade-up">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Dr. Puneet is an excellent urologist. His expertise, compassion, and communication made me feel comfortable throughout my treatment."</p>
+                <div class="reviewer">Shivam Sahani</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"The doctors are amazing, highly trained, and very polite. The hospital is neat and clean and the staff is cooperative."</p>
+                <div class="reviewer">Aakash Yadav</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Dr. Megha helped me tremendously. Her treatment approach is personalized and effective for my skin issues."</p>
+                <div class="reviewer">Soni Singh</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Hair fall treatment was excellent. Significant improvement and very supportive staff. Highly recommend for PRP."</p>
+                <div class="reviewer">Shubham Verma</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Best hospital for skin and urology treatment in Varanasi. Very good facilities."</p>
+                <div class="reviewer">Vishal Maurya</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Center -->
+    <section id="appointment">
+        <div class="section-title reveal fade-up">
+            <h2>Book an Appointment</h2>
+            <p>Schedule your visit with our expert specialists. Fill the form to connect via WhatsApp instantly.</p>
+        </div>
+        <div class="appointment-wrapper reveal fade-up">
+            <div class="app-form-container">
+                <form id="appointmentForm" class="app-form">
+                    <div class="form-group full">
+                        <label>Select Doctor *</label>
+                        <select id="docSelect" class="form-control" required>
+                            <option value="">-- Choose a Doctor --</option>
+                            <option value="Dr. Puneet Singh">Dr. Puneet Singh (Urology)</option>
+                            <option value="Dr. Megha Singh">Dr. Megha Singh (Dermatology)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Patient Name *</label>
+                        <input type="text" id="patientName" class="form-control" placeholder="Enter full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile Number *</label>
+                        <input type="tel" id="mobileNumber" class="form-control" placeholder="10-digit number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Date</label>
+                        <input type="date" id="prefDate" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Time</label>
+                        <input type="time" id="prefTime" class="form-control">
+                    </div>
+                    <div class="form-group full">
+                        <label>Problem Description</label>
+                        <textarea id="problemDesc" class="form-control" placeholder="Briefly describe your symptoms or reason for visit..."></textarea>
+                    </div>
+                    <div class="form-group full" style="margin-top: 10px;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem;"><i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> Request via WhatsApp</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contact" style="background: var(--bg-alt);">
+        <div class="section-title reveal fade-up">
+            <h2>Contact & Location</h2>
+            <p>We are conveniently located in Varanasi. Reach out to us for any queries.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info reveal fade-left">
+                <div class="contact-info-box">
+                    <div class="c-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="c-details">
+                        <h4>Address</h4>
+                        <p>N1/66-G3, Nagwa, Samne Ghat,<br>Varanasi – 221005, Uttar Pradesh</p>
+                    </div>
+                </div>
+                <div class="contact-info-box">
+                    <div class="c-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="c-details">
+                        <h4>Phone Numbers</h4>
+                        <p><a href="tel:05422366105">0542-2366105</a><br><a href="tel:05422366107">0542-2366107</a></p>
+                    </div>
+                </div>
+                <div class="contact-info-box">
+                    <div class="c-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div class="c-details">
+                        <h4>WhatsApp</h4>
+                        <p><a href="https://wa.me/918003767830" target="_blank">+91 8003767830</a></p>
+                    </div>
+                </div>
+                <div class="contact-info-box">
+                    <div class="c-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="c-details">
+                        <h4>Email</h4>
+                        <p><a href="mailto:dermelixirvns@gmail.com">dermelixirvns@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-info-box">
+                    <div class="c-icon"><i class="far fa-clock"></i></div>
+                    <div class="c-details">
+                        <h4>Consultation Timings</h4>
+                        <p>Monday - Saturday: 4:00 PM - 7:00 PM<br>Sunday: 10:00 AM - 4:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-map reveal fade-right">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.8979041556154!2d83.00929767538427!3d25.274019677661634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e336c645d6b6b%3A0x113ee64e6f38fa11!2sGyandeep%20Medicare%20Hospital!5e0!3m2!1sen!2sin!4v1781519767304!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="images/logo.png" alt="Gyandeep Medicare Logo" class="footer-logo">
+                <h2>Gyandeep Medicare</h2>
+                <p>Centre of Excellence</p>
+                <p style="font-size: 0.9rem;">Providing premium healthcare services in Urology, Dermatology, Hair Restoration, and Laser treatments in Varanasi.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/Gyandeepmedicare/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/gyandeepmedicare/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Hospital</a></li>
+                    <li><a href="#specialists">Our Doctors</a></li>
+                    <li><a href="#treatments">Treatments</a></li>
+                    <li><a href="#appointment">Book Appointment</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Specialities</h4>
+                <ul>
+                    <li><a href="#treatments">Urology</a></li>
+                    <li><a href="#treatments">Dermatology</a></li>
+                    <li><a href="#treatments">Hair Restoration</a></li>
+                    <li><a href="#treatments">Laser Treatment</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact Info</h4>
+                <ul style="color: #94a3b8; font-size: 0.9rem;">
+                    <li><i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-right: 5px;"></i> N1/66-G3, Nagwa, Samne Ghat, Varanasi</li>
+                    <li><i class="fas fa-phone-alt" style="color: var(--secondary); margin-right: 5px;"></i> 0542-2366105, 107</li>
+                    <li><i class="fab fa-whatsapp" style="color: var(--secondary); margin-right: 5px;"></i> +91 8003767830</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Gyandeep Medicare Hospital. All Rights Reserved. | Designed for Premium Healthcare.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-action">
+        <a href="#appointment" class="float-btn float-call" title="Book Appointment" style="background: var(--secondary);"><i class="far fa-calendar-plus"></i></a>
+        <a href="tel:05422366105" class="float-btn float-call" title="Call Us"><i class="fas fa-phone-alt"></i></a>
+        <a href="https://wa.me/918003767830" target="_blank" class="float-btn float-wa" title="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- AI Healthcare Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <div class="chatbot-container">
+            <div class="chat-header">
+                <div style="background: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="chat-title">
+                    <h4>Gyan Assist</h4>
+                    <p>Online | Virtual Assistant</p>
+                </div>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="chat-msg msg-bot">
+                    Hello! Welcome to Gyandeep Medicare Hospital. How can I assist you today? You can ask about our doctors, timings, or treatments.
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Type your message here..." onkeypress="handleChatEnter(event)">
+                <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <div class="chat-toggler" id="chatToggler" onclick="toggleChat()">
+            <i class="fas fa-comment-medical"></i>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         JAVASCRIPT LOGIC
+         ========================================================================== -->
+    <script>
+        // 1. Navbar Scroll Effect & Mobile Menu
+        const navbar = document.getElementById('navbar');
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.style.padding = '4px 5%';
+                navbar.style.background = 'rgba(232, 245, 239, 0.95)';
+            } else {
+                navbar.style.padding = '6px 5%';
+                navbar.style.background = 'rgba(232, 245, 239, 0.85)';
+            }
+        });
+
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileBtn.querySelector('i');
+            if(navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+            });
+        });
+
+        // 2. Hero Slider Logic
+        const slides = document.querySelectorAll('.hero-slider .slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        setInterval(nextSlide, 4000); // Change slide every 4 seconds for smoother premium feel
+
+        // 3. Scroll Reveal Animation Logic
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100; // threshold
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger once on load
+
+        // 4. Background Medical Icons Generator
+        const iconsArray = ['fa-stethoscope', 'fa-dna', 'fa-heartbeat', 'fa-microscope', 'fa-syringe', 'fa-hospital', 'fa-ambulance', 'fa-pills', 'fa-user-md', 'fa-x-ray'];
+        const iconContainer = document.getElementById('bg-icons-container');
+        const numIcons = 30; // Total icons distributed across the page
+
+        for(let i=0; i<numIcons; i++) {
+            let iconEl = document.createElement('i');
+            let randomIcon = iconsArray[Math.floor(Math.random() * iconsArray.length)];
+            iconEl.className = `fas ${randomIcon} bg-icon`;
+            
+            // Random styling
+            // Decreased size by another 30% (from 0.8-3.2rem to ~0.56-2.24rem)
+            let size = (Math.random() * 1.68) + 0.56; 
+            let left = Math.random() * 100; // 0 to 100%
+            let duration = Math.random() * 20 + 15; // 15s to 35s
+            let delay = Math.random() * -30; // negative delay to start immediately at different positions
+            
+            iconEl.style.fontSize = `${size}rem`;
+            iconEl.style.left = `${left}%`;
+            iconEl.style.animationDuration = `${duration}s`;
+            iconEl.style.animationDelay = `${delay}s`;
+            
+            iconContainer.appendChild(iconEl);
+        }
+
+        // 5. Treatments Tabs Logic
+        const tabBtns = document.querySelectorAll('.t-tab-btn');
+        const tabPanes = document.querySelectorAll('.t-pane');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active classes
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabPanes.forEach(p => p.classList.remove('active'));
+                
+                // Add active class
+                btn.classList.add('active');
+                const target = document.getElementById(btn.getAttribute('data-target'));
+                target.classList.add('active');
+            });
+        });
+
+        // 6. Gallery Filter Logic
+        const filterBtns = document.querySelectorAll('.g-btn');
+        const galleryItems = document.querySelectorAll('.g-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Active class toggle
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if(filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                        setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => { item.style.display = 'none'; }, 300);
+                    }
+                });
+            });
+        });
+
+        // 7. WhatsApp Appointment Form Logic
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const doc = document.getElementById('docSelect').value;
+            const name = document.getElementById('patientName').value;
+            const phone = document.getElementById('mobileNumber').value;
+            const date = document.getElementById('prefDate').value || 'Not specified';
+            const time = document.getElementById('prefTime').value || 'Not specified';
+            const desc = document.getElementById('problemDesc').value || 'No details provided';
+
+            const whatsappNum = "918003767830";
+            
+            // Format message precisely as requested
+            let message = `🏥 *Appointment Request*\n\n`;
+            message += `*Doctor:* ${doc}\n`;
+            message += `*Patient Name:* ${name}\n`;
+            message += `*Mobile:* ${phone}\n`;
+            message += `*Preferred Date:* ${date}\n`;
+            message += `*Preferred Time:* ${time}\n`;
+            message += `*Problem:* ${desc}\n\n`;
+            message += `Please confirm my appointment.`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${whatsappNum}?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+        });
+
+        // 8. AI Chatbot Logic (Rule-based)
+        const chatWidget = document.getElementById('chatbotWidget');
+        const chatBody = document.getElementById('chatBody');
+        const chatInput = document.getElementById('chatInput');
+
+        function toggleChat() {
+            chatWidget.classList.toggle('active');
+            if(chatWidget.classList.contains('active')) {
+                chatInput.focus();
+            }
+        }
+
+        function handleChatEnter(e) {
+            if(e.key === 'Enter') sendMessage();
+        }
+
+        function appendMessage(text, sender) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `chat-msg ${sender === 'user' ? 'msg-user' : 'msg-bot'}`;
+            msgDiv.innerHTML = text;
+            chatBody.appendChild(msgDiv);
+            chatBody.scrollTop = chatBody.scrollHeight; // Auto scroll
+        }
+
+        const botKnowledge = [
+            { patterns: [/timing/i, /hours/i, /open/i], response: "Our consultation timings are Monday to Saturday: 4 PM - 7 PM, and Sunday: 10 AM - 4 PM." },
+            { patterns: [/puneet/i, /urolog/i, /kidney/i, /stone/i, /prostate/i], response: "Dr. Puneet Singh is our expert Urologist & Andrologist (MBBS, MS, M.Ch). He specializes in kidney stones, prostate disorders, and male health. Would you like to book an appointment with him?" },
+            { patterns: [/megha/i, /dermatolog/i, /skin/i, /hair/i, /laser/i, /pimple/i, /acne/i], response: "Dr. Megha Singh is our MD Dermatologist, Hair & Laser Specialist. She provides advanced treatments for acne, hair fall (PRP/GFC), and cosmetic laser procedures." },
+            { patterns: [/location/i, /address/i, /where/i, /nagwa/i], response: "We are located at N1/66-G3, Nagwa, Samne Ghat, Varanasi - 221005." },
+            { patterns: [/contact/i, /phone/i, /call/i, /number/i], response: "You can call us at 0542-2366105 or 0542-2366107." },
+            { patterns: [/whatsapp/i], response: "Our WhatsApp number is +91 8003767830. <a href='https://wa.me/918003767830' target='_blank' style='color:inherit; text-decoration:underline;'>Click here to chat</a>." },
+            { patterns: [/book/i, /appointment/i, /visit/i], response: "You can easily book an appointment by filling the form in the 'Book Appointment' section or by messaging us on WhatsApp at 8003767830." },
+            { patterns: [/hi/i, /hello/i, /hey/i], response: "Hello! How can I help you regarding Gyandeep Medicare today?" }
+        ];
+
+        function getBotResponse(input) {
+            for(let rule of botKnowledge) {
+                for(let pattern of rule.patterns) {
+                    if(pattern.test(input)) {
+                        return rule.response;
+                    }
+                }
+            }
+            return "I currently do not have that specific information. Please contact Gyandeep Medicare Hospital directly at +91 8003767830 or use the Book Appointment form.";
+        }
+
+        function sendMessage() {
+            const text = chatInput.value.trim();
+            if(!text) return;
+            
+            // User message
+            appendMessage(text, 'user');
+            chatInput.value = '';
+
+            // Simulate typing delay
+            setTimeout(() => {
+                const response = getBotResponse(text);
+                appendMessage(response, 'bot');
+            }, 600);
+        }
+
+    </script>
+</body>
+</html>
