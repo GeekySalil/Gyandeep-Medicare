@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gyandeep Medicare Hospital - Centre of Excellence in Varanasi. Advanced Urology, Dermatology, Hair & Laser Care by Dr. Puneet Singh & Dr. Megha Pundir Singh.">
+    <meta property="og:title" content="Gyandeep Medicare Hospital | Premium Healthcare">
+    <meta property="og:description" content="Advanced Urology, Dermatology, Hair & Laser Care in Varanasi.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80">
+    <title>Gyandeep Medicare Hospital | Premium Healthcare</title>
+    
+    <!-- Favicon (Using an SVG Medical Cross as placeholder) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏥</text></svg>">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Bootstrap Grid System ONLY (For Layout auto-responsiveness) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+
+    <style>
+        /* ================= VARIABLES & GLOBAL ================= */
+        :root {
+            --primary: #0A7A4B;
+            --secondary: #E8B923;
+            --accent: #EBF7F2; /* Slightly richer green tint */
+            --text-dark: #1E293B;
+            --text-light: #64748B;
+            --white: #FFFFFF;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --shadow-premium: 0 20px 40px rgba(10, 122, 75, 0.08);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: default; 
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #F8FFFC 0%, var(--accent) 100%); /* Stronger green tint gradient */
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        a { text-decoration: none; color: inherit; cursor: pointer; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; }
+
+        /* ================= UTILITIES ================= */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: var(--shadow-premium);
+        }
+
+        .section-padding { padding: 100px 0; position: relative; z-index: 2; }
+        .bg-light-green { background: var(--accent); }
+        .text-gold { color: var(--secondary); }
+        .text-green { color: var(--primary); }
+
+        .btn-premium {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 14px 32px; background: var(--primary); color: var(--white);
+            font-family: 'Outfit', sans-serif; font-weight: 500; border-radius: 50px;
+            border: 2px solid transparent; transition: var(--transition); cursor: pointer;
+            text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;
+            position: relative; overflow: hidden; z-index: 1;
+        }
+        
+        .btn-premium::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 0%; height: 100%;
+            background: var(--secondary); transition: var(--transition); z-index: -1;
+        }
+
+        .btn-premium:hover::before { width: 100%; }
+        .btn-premium:hover { color: var(--text-dark); border-color: var(--secondary); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(232, 185, 35, 0.3); }
+
+        .btn-gold { background: var(--secondary); color: var(--text-dark); }
+        .btn-gold::before { background: var(--primary); }
+        .btn-gold:hover { color: var(--white); }
+
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 3rem; margin-bottom: 15px; position: relative; display: inline-block; }
+        .section-title h2::after {
+            content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+            width: 60px; height: 3px; background: var(--secondary); border-radius: 2px;
+        }
+        .section-title p { color: var(--text-light); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        /* ================= ANIMATIONS ================= */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-left { opacity: 0; transform: translateX(-40px); transition: all 0.8s ease-out; }
+        .reveal-left.active { opacity: 1; transform: translateX(0); }
+        .reveal-right { opacity: 0; transform: translateX(40px); transition: all 0.8s ease-out; }
+        .reveal-right.active { opacity: 1; transform: translateX(0); }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(10, 122, 75, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(10, 122, 75, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(10, 122, 75, 0); }
+        }
+        @keyframes slideInRight {
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .floating-particle {
+            position: absolute; opacity: 0.04; pointer-events: none; z-index: 1;
+            color: var(--primary); animation: float 6s ease-in-out infinite;
+        }
+
+        /* ================= TOP BAR & NAVBAR ================= */
+        .top-bar {
+            background: #064E30; color: var(--white); padding: 8px 0;
+            font-size: 0.85rem; font-weight: 400; border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .top-bar-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px 20px; }
+        .top-bar-group { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 25px; justify-content: center; }
+        .top-bar-item { display: inline-flex; align-items: center; gap: 8px; letter-spacing: 0.5px; white-space: nowrap; }
+        .top-bar-item i { color: var(--secondary); font-size: 0.95rem; }
+
+        .navbar {
+            position: sticky; top: 0; z-index: 1000; background: rgba(10, 122, 75, 0.95);
+            backdrop-filter: blur(10px); padding: 12px 0; transition: var(--transition);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .navbar.scrolled { padding: 8px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        
+        .brand { display: flex; align-items: center; gap: 15px; text-decoration: none; cursor: pointer; }
+        .brand-logo { width: 42px; height: 42px; border-radius: 50%; background: var(--white); display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--primary); box-shadow: 0 0 15px rgba(232, 185, 35, 0.5); overflow: hidden; }
+        .brand-logo img { width: 100%; height: 100%; object-fit: cover; }
+        .brand-text { color: var(--white); }
+        .brand-text h1 { font-size: 1.2rem; margin: 0; color: var(--white); letter-spacing: 0.5px; }
+        .brand-text span { font-size: 0.8rem; color: var(--secondary); font-family: 'Outfit'; letter-spacing: 1px; text-transform: uppercase; }
+
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { color: var(--white); font-weight: 500; font-size: 0.95rem; position: relative; transition: var(--transition); cursor: pointer; }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background: var(--secondary); transition: var(--transition); }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-links a:hover, .nav-links a.active { color: var(--secondary); }
+
+        .mobile-menu-btn { display: none; color: var(--white); font-size: 1.5rem; cursor: pointer; border: none; background: transparent; }
+
+        /* ================= HERO SECTION ================= */
+        .hero {
+            position: relative; overflow: hidden; display: flex; align-items: center;
+            min-height: calc(100vh - 115px); /* Perfectly accounts for Topbar + Navbar */
+        }
+        .hero-slides { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .slide {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0; transition: opacity 1.5s ease-in-out;
+            background-size: cover; background-position: center;
+        }
+        .slide.active { opacity: 1; }
+        .slide::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to right, rgba(10, 122, 75, 0.85), rgba(30, 41, 59, 0.6));
+        }
+
+        .hero-content { position: relative; z-index: 2; width: 100%; padding-bottom: 110px; padding-top: 20px; }
+        .hero-text-box { max-width: 800px; }
+        .hero-subtitle { color: var(--secondary); font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; display: block; animation: fadeInUp 1s forwards 0.5s; opacity: 0; }
+        .hero-title { font-size: 3.8rem; color: var(--white); line-height: 1.1; margin-bottom: 15px; animation: fadeInUp 1s forwards 0.7s; opacity: 0; }
+        .hero-desc { font-size: 1.1rem; color: #E2E8F0; margin-bottom: 25px; max-width: 600px; animation: fadeInUp 1s forwards 0.9s; opacity: 0; }
+        .hero-buttons { display: flex; gap: 20px; animation: fadeInUp 1s forwards 1.1s; opacity: 0; }
+
+        /* Right Side Floating Showcase Cards */
+        .hero-showcase { display: flex; flex-direction: column; gap: 15px; align-items: flex-end; width: 100%; padding-right: 20px; }
+        .showcase-card {
+            background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2); padding: 15px 20px; border-radius: 16px;
+            color: white; width: 85%; transform: translateX(50px); opacity: 0; animation: slideInRight 1s forwards;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: var(--transition);
+        }
+        .showcase-card:hover { transform: translateX(0) scale(1.02); background: rgba(255,255,255,0.15); border-color: var(--secondary); }
+        .showcase-card:nth-child(1) { animation-delay: 0.8s; margin-right: 0%; }
+        .showcase-card:nth-child(2) { animation-delay: 1.0s; margin-right: 8%; background: rgba(10, 122, 75, 0.3); border-color: rgba(232, 185, 35, 0.3); }
+        .showcase-card:nth-child(3) { animation-delay: 1.2s; margin-right: 16%; }
+        .showcase-card h4 { color: var(--secondary); margin-bottom: 6px; font-family: 'Outfit'; font-size: 1.05rem; display: flex; align-items: center; gap: 10px; }
+        .showcase-card h4 i { color: var(--white); background: var(--primary); padding: 6px; border-radius: 50%; font-size: 0.85rem; }
+        .showcase-card p { font-size: 0.9rem; margin: 0; color: #E2E8F0; line-height: 1.4; }
+
+        /* Trust Bar - New Single Row Separate Cards Layout */
+        .trust-bar { position: absolute; bottom: 20px; left: 0; width: 100%; z-index: 10; }
+        .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        .trust-item { 
+            display: flex; align-items: center; justify-content: center; gap: 12px; 
+            background: var(--white); padding: 15px 15px; border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15); transition: var(--transition);
+            border-bottom: 4px solid var(--secondary); height: 100%;
+        }
+        .trust-item:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 15px 30px rgba(0,0,0,0.25); }
+        .trust-item i { font-size: 1.8rem; color: var(--primary); flex-shrink: 0; }
+        .trust-item h4 { color: var(--text-dark); font-family: 'Outfit'; font-size: 0.95rem; margin: 0; font-weight: 600; line-height: 1.2; text-align: left; }
+
+        /* ================= ABOUT SECTION ================= */
+        .about-image-wrapper { position: relative; }
+        .about-img-main { border-radius: 20px; box-shadow: var(--shadow-premium); width: 100%; }
+        .about-experience-badge {
+            position: absolute; bottom: -30px; right: -30px; background: var(--primary); color: var(--white);
+            padding: 30px; border-radius: 50%; width: 150px; height: 150px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            border: 5px solid var(--white); box-shadow: var(--shadow-premium);
+        }
+        .about-experience-badge h3 { color: var(--secondary); font-size: 2.5rem; margin: 0; line-height: 1; }
+        .about-experience-badge p { font-size: 0.9rem; text-align: center; margin: 0; font-weight: 500; }
+        
+        .about-text h2 { font-size: 3rem; margin-bottom: 20px; }
+        .about-text p { color: var(--text-light); font-size: 1.1rem; margin-bottom: 20px; }
+        .feature-list li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-weight: 500; }
+        .feature-list li i { color: var(--secondary); }
+
+        /* ================= CENTRES OF EXCELLENCE ================= */
+        .excellence-card { padding: 50px; height: 100%; transition: var(--transition); position: relative; overflow: hidden; }
+        .excellence-card:hover { transform: translateY(-10px); }
+        .excellence-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--secondary); transform: scaleY(0); transition: var(--transition); transform-origin: bottom; }
+        .excellence-card:hover::before { transform: scaleY(1); }
+        .exc-logo { width: 80px; height: 80px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--primary); margin-bottom: 25px; }
+        .exc-title { font-size: 2.2rem; margin-bottom: 10px; }
+        .exc-leader { color: var(--text-light); font-weight: 500; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .exc-leader strong { color: var(--primary); font-size: 1.2rem; display: block; }
+        .exc-services { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 30px; }
+        .exc-services li { font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
+        .exc-services li i { color: var(--primary); font-size: 0.8rem; }
+
+        /* ================= SPECIALISTS ================= */
+        .doctor-card { text-align: center; padding: 40px; transition: var(--transition); border: 1px solid transparent; }
+        .doctor-card:hover { border-color: var(--secondary); box-shadow: 0 30px 60px rgba(10, 122, 75, 0.1); }
+        .doc-img-wrapper { width: 200px; height: 200px; margin: 0 auto 25px; border-radius: 50%; overflow: hidden; border: 5px solid var(--white); box-shadow: var(--shadow-premium); position: relative; }
+        .doc-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+        .doctor-card:hover .doc-img-wrapper img { transform: scale(1.1); }
+        .doc-name { font-size: 2rem; margin-bottom: 5px; }
+        .doc-quals { color: var(--primary); font-weight: 600; font-size: 0.9rem; margin-bottom: 15px; }
+        .doc-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-bottom: 20px; }
+        .doc-tag { background: var(--accent); color: var(--primary); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
+        
+        /* Modal */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 122, 75, 0.8); backdrop-filter: blur(5px); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: var(--transition); }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal-content { background: var(--white); width: 90%; max-width: 700px; border-radius: 20px; padding: 40px; position: relative; transform: translateY(50px); transition: var(--transition); max-height: 90vh; overflow-y: auto; }
+        .modal-overlay.active .modal-content { transform: translateY(0); }
+        .close-modal { position: absolute; top: 20px; right: 20px; font-size: 1.5rem; cursor: pointer; color: var(--text-light); transition: var(--transition); }
+        .close-modal:hover { color: var(--primary); transform: rotate(90deg); }
+
+        /* ================= INTERACTIVE SPECIALITIES ================= */
+        .specialities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .spec-card { background: var(--white); border-radius: 20px; padding: 40px 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: var(--transition); position: relative; overflow: hidden; z-index: 1; }
+        .spec-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, var(--primary) 0%, #065F3A 100%); z-index: -1; opacity: 0; transition: var(--transition); }
+        .spec-icon { font-size: 3rem; color: var(--primary); margin-bottom: 20px; transition: var(--transition); }
+        .spec-card h3 { font-size: 1.5rem; transition: var(--transition); margin-bottom: 0; }
+        .spec-desc { max-height: 0; opacity: 0; overflow: hidden; transition: var(--transition); color: var(--white); margin-top: 15px; font-size: 0.95rem; }
+        .spec-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-premium); }
+        .spec-card:hover::before { opacity: 1; }
+        .spec-card:hover .spec-icon, .spec-card:hover h3 { color: var(--white); }
+        .spec-card:hover .spec-desc { max-height: 200px; opacity: 1; margin-top: 20px; }
+
+        /* ================= SERVICES & PRICING ================= */
+        .service-category { padding: 30px; border-radius: 20px; background: var(--white); height: 100%; border-top: 5px solid var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+        .service-category h3 { border-bottom: 1px solid #E2E8F0; padding-bottom: 15px; margin-bottom: 20px; }
+        .service-list li { padding: 8px 0; border-bottom: 1px dashed #E2E8F0; font-size: 0.95rem; display: flex; align-items: center; }
+        .service-list li::before { content: '✨'; margin-right: 10px; font-size: 0.8rem; }
+        .service-list li:last-child { border-bottom: none; }
+
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .price-card { background: var(--white); padding: 25px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #E2E8F0; transition: var(--transition); }
+        .price-card:hover { border-color: var(--secondary); transform: scale(1.02); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .price-name { font-weight: 600; color: var(--primary); font-size: 1.1rem; }
+        .price-val { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-dark); font-weight: 700; }
+        .price-val span { font-size: 0.8rem; color: var(--text-light); font-family: 'Outfit'; font-weight: 400; display: block; text-align: right; }
+
+        /* ================= TPA / INSURANCE ================= */
+        .tpa-section { background: var(--primary); color: var(--white); padding: 80px 0; text-align: center; }
+        .tpa-section h2 { color: var(--white); }
+        .tpa-section .section-title h2::after { background: var(--white); }
+        .tpa-section p { color: #E2E8F0; }
+        .ayushman-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 40px; border-radius: 20px; margin-bottom: 40px; backdrop-filter: blur(10px); }
+        .ayushman-card h3 { color: var(--secondary); font-size: 2rem; margin-bottom: 20px; }
+        .ayushman-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        .ayushman-list li { background: rgba(255,255,255,0.15); padding: 8px 20px; border-radius: 50px; font-size: 0.95rem; }
+        .insurance-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; align-items: center; }
+        .insurance-logo { background: var(--white); color: var(--primary); padding: 15px 30px; border-radius: 10px; font-weight: 700; font-size: 1.2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: var(--transition); }
+        .insurance-logo:hover { transform: translateY(-5px); background: var(--secondary); color: var(--text-dark); }
+
+        /* ================= GALLERY & REVIEWS TABS ================= */
+        .tab-buttons { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
+        .tab-btn { background: transparent; border: 2px solid var(--primary); color: var(--primary); padding: 10px 25px; border-radius: 50px; font-weight: 600; font-family: 'Outfit'; cursor: pointer; transition: var(--transition); font-size: 1rem; }
+        .tab-btn.active, .tab-btn:hover { background: var(--primary); color: var(--white); }
+
+        .tab-content { display: none; animation: fadeIn 0.5s ease-in-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .gallery-item { border-radius: 15px; overflow: hidden; height: 250px; position: relative; cursor: pointer; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .gallery-item::after { content: '🔍'; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 122, 75, 0.6); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--white); opacity: 0; transition: var(--transition); }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item:hover::after { opacity: 1; }
+
+        /* Reviews Slider */
+        .review-slider-container { position: relative; max-width: 800px; margin: 0 auto; overflow: hidden; padding: 20px; }
+        .review-track { display: flex; transition: transform 0.5s ease-in-out; }
+        .review-card { min-width: 100%; padding: 40px; background: var(--white); border-radius: 20px; box-shadow: var(--shadow-premium); text-align: center; border: 1px solid #f0f0f0; }
+        .stars { color: var(--secondary); font-size: 1.2rem; margin-bottom: 20px; }
+        .review-text { font-size: 1.1rem; font-style: italic; color: var(--text-dark); margin-bottom: 20px; position: relative; }
+        .review-text::before { content: '"'; font-size: 4rem; color: var(--accent); position: absolute; top: -30px; left: -20px; font-family: serif; z-index: -1; }
+        .review-author { font-weight: 700; color: var(--primary); font-size: 1.2rem; }
+        .slider-dots { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; background: #CBD5E1; cursor: pointer; transition: var(--transition); }
+        .dot.active { background: var(--primary); transform: scale(1.2); }
+
+        /* ================= APPOINTMENTS ================= */
+        .appointment-form { padding: 40px; background: var(--white); border-radius: 20px; box-shadow: var(--shadow-premium); border-top: 5px solid var(--primary); height: 100%; }
+        .form-title { font-size: 2rem; margin-bottom: 10px; text-align: center; }
+        .form-doc { text-align: center; color: var(--text-light); margin-bottom: 30px; font-weight: 500; }
+        .form-group { margin-bottom: 20px; }
+        .form-control { width: 100%; padding: 15px; border: 1px solid #E2E8F0; border-radius: 10px; font-family: 'Outfit'; font-size: 1rem; transition: var(--transition); background: #F8FAFC; }
+        .form-control:focus { outline: none; border-color: var(--primary); background: var(--white); box-shadow: 0 0 0 4px rgba(10, 122, 75, 0.1); }
+        .form-submit { width: 100%; font-size: 1.1rem; padding: 16px; border-radius: 10px; margin-top: 10px; cursor: pointer; border: none; }
+
+        /* ================= SOCIAL & CONTACT ================= */
+        .social-card { background: var(--white); padding: 40px; border-radius: 20px; text-align: center; box-shadow: var(--shadow-premium); height: 100%; border: 1px solid #f0f0f0; transition: var(--transition); }
+        .social-card:hover { transform: translateY(-5px); border-color: var(--secondary); }
+        .social-card h3 { margin-bottom: 25px; }
+        .social-links { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .social-icon { width: 50px; height: 50px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--primary); transition: var(--transition); }
+        .social-icon:hover { background: var(--primary); color: var(--white); transform: translateY(-3px); }
+
+        .contact-info-box { padding: 40px; background: var(--white); border-radius: 20px; box-shadow: var(--shadow-premium); }
+        .contact-item { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 30px; }
+        .contact-item i { font-size: 2rem; color: var(--primary); background: var(--accent); padding: 15px; border-radius: 50%; }
+        .contact-item div h4 { margin-bottom: 5px; font-size: 1.2rem; }
+        .contact-item div p { color: var(--text-light); margin: 0; }
+        .map-container { border-radius: 20px; overflow: hidden; height: 100%; min-height: 400px; box-shadow: var(--shadow-premium); }
+
+        /* ================= FOOTER & WIDGETS ================= */
+        .footer { background: #064E30; color: #E2E8F0; padding: 80px 0 30px; margin-top: 50px; }
+        .footer-brand { margin-bottom: 30px; }
+        .footer-logo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); background: var(--white); }
+        .footer-brand h2 { color: var(--white); margin-bottom: 10px; font-size: 2rem; }
+        .footer-brand p { color: var(--secondary); font-weight: 500; font-size: 1.1rem; }
+        .footer h4 { color: var(--white); margin-bottom: 25px; position: relative; padding-bottom: 10px; }
+        .footer h4::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 2px; background: var(--secondary); }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { transition: var(--transition); }
+        .footer-links a:hover { color: var(--secondary); padding-left: 5px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; padding-top: 20px; text-align: center; font-size: 0.9rem; }
+
+        .floating-ctas { position: fixed; bottom: 30px; right: 30px; z-index: 999; display: flex; flex-direction: column; gap: 15px; }
+        .float-btn-round { display: block; width: 60px; height: 60px; border-radius: 50%; box-shadow: 0 10px 20px rgba(0,0,0,0.15); transition: var(--transition); animation: pulseGlow 2s infinite; overflow: hidden; border: 2px solid var(--white); background: var(--white); }
+        .float-btn-round:hover { transform: scale(1.1); box-shadow: 0 15px 25px rgba(0,0,0,0.25); }
+        .dummy-chat-logo { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .chatbot-container { position: fixed; bottom: 30px; left: 30px; z-index: 999; }
+        .chat-toggle { width: 60px; height: 60px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; cursor: pointer; box-shadow: var(--shadow-premium); transition: var(--transition); border: none; }
+        .chat-toggle:hover { transform: scale(1.1); background: var(--secondary); color: var(--text-dark); }
+        .chat-window { position: absolute; bottom: 80px; left: 0; width: 320px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.5); display: flex; flex-direction: column; overflow: hidden; opacity: 0; visibility: hidden; transform: translateY(20px) scale(0.95); transform-origin: bottom left; transition: var(--transition); }
+        .chat-window.active { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+        .chat-header { background: var(--primary); color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-family: 'Playfair Display'; font-size: 1.2rem; font-weight: 600; }
+        .close-chat { cursor: pointer; font-size: 1.2rem; }
+        .chat-body { padding: 20px; height: 300px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; font-size: 0.9rem; background: #f8fafc; }
+        .chat-msg { max-width: 85%; padding: 10px 15px; border-radius: 15px; line-height: 1.4; }
+        .msg-bot { background: white; border-bottom-left-radius: 2px; border: 1px solid #e2e8f0; align-self: flex-start; }
+        .msg-user { background: var(--primary); color: white; border-bottom-right-radius: 2px; align-self: flex-end; }
+        .chat-input { display: flex; border-top: 1px solid #e2e8f0; padding: 10px; background: white; }
+        .chat-input input { flex: 1; border: none; padding: 10px; outline: none; border-radius: 20px; background: #f1f5f9; }
+        .chat-input button { background: var(--primary); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 10px; cursor: pointer; transition: var(--transition); }
+        .chat-input button:hover { background: var(--secondary); }
+
+        /* ================= RESPONSIVE MEDIA QUERIES ================= */
+        @media (max-width: 1200px) {
+            .trust-item h4 { font-size: 0.9rem; }
+            .trust-item i { font-size: 1.5rem; }
+        }
+        @media (max-width: 991px) {
+            .nav-links { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: var(--primary); flex-direction: column; justify-content: center; transition: var(--transition); box-shadow: -10px 0 30px rgba(0,0,0,0.1); }
+            .nav-links.active { right: 0; }
+            .mobile-menu-btn { display: block; z-index: 1001; }
+            .hero { display: block; height: auto; padding: 80px 0 40px; }
+            .hero-content { padding-bottom: 20px; }
+            .hero-title { font-size: 3rem; }
+            .about-experience-badge { width: 100px; height: 100px; bottom: -10px; right: -10px; padding: 15px; }
+            .about-experience-badge h3 { font-size: 1.8rem; }
+            .floating-ctas { bottom: 15px; right: 15px; }
+            .chatbot-container { bottom: 15px; left: 15px; }
+            .top-bar-content { justify-content: center; }
+            /* Adjust Trust Bar for Tablet */
+            .trust-bar { position: relative; bottom: 0; margin-top: 40px; }
+            .trust-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 576px) {
+            .hero-title { font-size: 2.2rem; }
+            .hero-buttons { flex-direction: column; }
+            .chat-window { width: calc(100vw - 30px); left: 0; bottom: 70px; }
+            .excellence-card { padding: 30px; }
+            .top-bar-item { white-space: normal; justify-content: center; text-align: center; }
+            /* Adjust Trust Bar for Mobile */
+            .trust-grid { grid-template-columns: 1fr; gap: 15px; }
+            .trust-item { justify-content: flex-start; padding: 15px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particle Container -->
+    <div id="particles-container"></div>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-group">
+                    <div class="top-bar-item"><i class="fa-solid fa-phone"></i> 0542-2366105 / 2366107</div>
+                    <div class="top-bar-item"><i class="fa-brands fa-whatsapp"></i> Uro: 8824998491 <span style="opacity: 0.4; margin: 0 4px;">|</span> Derm: 8003767830</div>
+                </div>
+                <div class="top-bar-group">
+                    <div class="top-bar-item"><i class="fa-solid fa-location-dot"></i> N1/66-G3, Nagwa, Samne Ghat, Varanasi</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="brand">
+                <div class="brand-logo"><img src="https://placehold.co/100x100/FFFFFF/0A7A4B?text=Logo" alt="Brand Logo"></div>
+                <div class="brand-text">
+                    <h1>GYANDEEP MEDICARE</h1>
+                    <span>Hospital</span>
+                </div>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#specialities">Specialities</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero" id="home">
+        <div class="hero-slides" id="heroSlides">
+            <!-- Slide 1: Hospital -->
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1920');"></div>
+            <!-- Slide 2: Urology -->
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=1920');"></div>
+            <!-- Slide 3: Dermelixir -->
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=1920');"></div>
+            <!-- Slide 4: PRP -->
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=1920');"></div>
+            <!-- Slide 5: Laser -->
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1512675828443-4f454c42253a?auto=format&fit=crop&q=80&w=1920');"></div>
+        </div>
+
+        <div class="container hero-content">
+            <div class="row align-items-center w-100">
+                <!-- Left: Hero Text -->
+                <div class="col-lg-7">
+                    <div class="hero-text-box">
+                        <span class="hero-subtitle">Premium Healthcare Institution</span>
+                        <h1 class="hero-title">Gyandeep Medicare Hospital</h1>
+                        <p class="hero-desc">Delivering specialized healthcare through expert consultants, advanced treatment technologies, and patient-centered care. Advanced Urology, Dermatology, Hair & Laser Care.</p>
+                        <div class="hero-buttons">
+                            <a href="#appointment" class="btn-premium">Book Urology Consultation</a>
+                            <a href="#appointment" class="btn-premium btn-gold">Book Dermelixir Consultation</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Glassmorphism Showcase (Utilizing Vacant Space) -->
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="hero-showcase">
+                        <div class="showcase-card">
+                            <h4><i class="fa-solid fa-award"></i> Centre of Excellence</h4>
+                            <p>Advanced healthcare facility equipped with ultra-modern medical technology.</p>
+                        </div>
+                        <div class="showcase-card">
+                            <h4><i class="fa-solid fa-kidneys" style="color:var(--white);"></i> Urology & Andrology</h4>
+                            <p>Expert care for kidney stones, prostate disorders, and reproductive health.</p>
+                        </div>
+                        <div class="showcase-card">
+                            <h4><i class="fa-solid fa-spa"></i> Derm Elixir</h4>
+                            <p>Premium skin treatments, hair restoration therapy, and laser aesthetics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust & Highlights Bar: 4 Cards in a perfect single row -->
+        <div class="trust-bar">
+            <div class="container">
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <h4>Established<br>In 2020</h4>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fa-solid fa-award"></i>
+                        <h4>Centre Of<br>Excellence</h4>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        <h4>Specialist<br>Consultants</h4>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <h4>Prime Location<br>In Varanasi</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section class="section-padding bg-light-green" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0 reveal-left">
+                    <div class="about-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=800" alt="Hospital Building" class="about-img-main">
+                        <div class="about-experience-badge">
+                            <h3>2020</h3>
+                            <p>Established</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 reveal-right">
+                    <div class="about-text ps-lg-4">
+                        <h2 class="text-green">Redefining Healthcare Excellence</h2>
+                        <p>Founded in 2020, Gyandeep Medicare Hospital stands as a beacon of specialized medical care in Varanasi. Operating on a specialist healthcare model, we prioritize patient-focused care driven by advanced treatment technologies.</p>
+                        <p>We proudly house two flagship Centres of Excellence, ensuring that our patients receive world-class, dedicated treatments tailored to their specific needs.</p>
+                        <ul class="feature-list mt-4">
+                            <li><i class="fa-solid fa-circle-check"></i> Urology & Andrology Centre</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Derm Elixir Skin, Hair, Laser & Cosmetology Centre</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Advanced Treatment Technologies</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Patient-Centered Compassionate Care</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CENTRES OF EXCELLENCE -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Our Centres of Excellence</h2>
+                <p>Discover our dedicated specialist centres equipped with state-of-the-art medical technology and led by industry-leading consultants.</p>
+            </div>
+            <div class="row g-4">
+                <!-- Urology Centre -->
+                <div class="col-md-6 reveal">
+                    <div class="glass-panel excellence-card">
+                        <div class="exc-logo"><i class="fa-solid fa-kidneys"></i></div>
+                        <h3 class="exc-title text-green">Urology & Andrology Centre</h3>
+                        <div class="exc-leader">
+                            Led By: <strong>Dr. Puneet Singh</strong>
+                        </div>
+                        <ul class="exc-services">
+                            <li><i class="fa-solid fa-check"></i> Kidney Stone Treatment</li>
+                            <li><i class="fa-solid fa-check"></i> Bladder Stone Surgery</li>
+                            <li><i class="fa-solid fa-check"></i> Prostate Disorders</li>
+                            <li><i class="fa-solid fa-check"></i> Hydrocele & Varicocele</li>
+                            <li><i class="fa-solid fa-check"></i> Male Health & Andrology</li>
+                            <li><i class="fa-solid fa-check"></i> Urological Cancer</li>
+                            <li><i class="fa-solid fa-check"></i> Uroflowmetry</li>
+                            <li><i class="fa-solid fa-check"></i> Laparoscopic Urology</li>
+                        </ul>
+                        <a href="#appointment" class="btn-premium mt-3 w-100">Book Urology Consultation</a>
+                    </div>
+                </div>
+                <!-- Dermelixir Centre -->
+                <div class="col-md-6 reveal" style="transition-delay: 0.2s">
+                    <div class="glass-panel excellence-card">
+                        <div class="exc-logo"><i class="fa-solid fa-spa"></i></div>
+                        <h3 class="exc-title text-green">Derm Elixir Skin & Hair Centre</h3>
+                        <div class="exc-leader">
+                            Founded By: <strong>Dr. Megha Pundir Singh</strong>
+                        </div>
+                        <ul class="exc-services">
+                            <li><i class="fa-solid fa-check"></i> Acne & Pimple Treatment</li>
+                            <li><i class="fa-solid fa-check"></i> Hair Fall & PRP Therapy</li>
+                            <li><i class="fa-solid fa-check"></i> GFC Therapy</li>
+                            <li><i class="fa-solid fa-check"></i> Advanced Laser Treatments</li>
+                            <li><i class="fa-solid fa-check"></i> Chemical Peels</li>
+                            <li><i class="fa-solid fa-check"></i> HydraFacial MD</li>
+                            <li><i class="fa-solid fa-check"></i> Anti-Aging Solutions</li>
+                            <li><i class="fa-solid fa-check"></i> Aesthetic Cosmetology</li>
+                        </ul>
+                        <a href="#appointment" class="btn-premium btn-gold mt-3 w-100">Book Dermelixir Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEET OUR SPECIALISTS -->
+    <section class="section-padding bg-light-green">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Meet Our Specialists</h2>
+                <p>Highly qualified, experienced, and dedicated consultants leading our centres of excellence.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- Dr Puneet -->
+                <div class="col-md-5 reveal">
+                    <div class="glass-panel doctor-card">
+                        <div class="doc-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400" alt="Dr. Puneet Singh">
+                        </div>
+                        <h3 class="doc-name text-green">Dr. Puneet Singh</h3>
+                        <p class="doc-quals">MBBS, MS (General Surgery), M.Ch Urology</p>
+                        <div class="doc-tags">
+                            <span class="doc-tag">Consultant Urologist</span>
+                            <span class="doc-tag">Consultant Andrologist</span>
+                            <span class="doc-tag">Laparoscopic Surgeon</span>
+                        </div>
+                        <button class="btn-premium btn-gold mt-2" onclick="openModal('modalPuneet')">View Profile</button>
+                    </div>
+                </div>
+                <!-- Dr Megha -->
+                <div class="col-md-5 reveal" style="transition-delay: 0.2s">
+                    <div class="glass-panel doctor-card">
+                        <div class="doc-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=400" alt="Dr. Megha Pundir Singh">
+                        </div>
+                        <h3 class="doc-name text-green">Dr. Megha Pundir Singh</h3>
+                        <p class="doc-quals">MBBS, MD Skin & VD</p>
+                        <div class="doc-tags">
+                            <span class="doc-tag">Consultant Dermatologist</span>
+                            <span class="doc-tag">Ex-SR IMS BHU</span>
+                            <span class="doc-tag">10+ Years Exp.</span>
+                        </div>
+                        <button class="btn-premium mt-2" onclick="openModal('modalMegha')">View Profile</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE SPECIALITIES -->
+    <section class="section-padding" id="specialities">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Advanced Specialities</h2>
+                <p>Comprehensive healthcare solutions across our specialized domains.</p>
+            </div>
+            <div class="specialities-grid">
+                <div class="spec-card reveal">
+                    <div class="spec-icon"><i class="fa-solid fa-staff-snake"></i></div>
+                    <h3>Urology</h3>
+                    <div class="spec-desc">Advanced diagnosis and treatment of kidney stones, prostate disorders, urinary tract diseases, and urological cancers.</div>
+                </div>
+                <div class="spec-card reveal">
+                    <div class="spec-icon"><i class="fa-solid fa-mars"></i></div>
+                    <h3>Andrology</h3>
+                    <div class="spec-desc">Male reproductive health, infertility management, sexual health disorders, and hormonal evaluation.</div>
+                </div>
+                <div class="spec-card reveal">
+                    <div class="spec-icon"><i class="fa-solid fa-hand-dots"></i></div>
+                    <h3>Dermatology</h3>
+                    <div class="spec-desc">Comprehensive skin disease diagnosis and treatment including acne, pigmentation, infections, and allergies.</div>
+                </div>
+                <div class="spec-card reveal">
+                    <div class="spec-icon"><i class="fa-solid fa-scissors"></i></div>
+                    <h3>Hair Restoration</h3>
+                    <div class="spec-desc">PRP, GFC, Exosome Therapy, Hair Fall Management, and advanced Hair Restoration Procedures.</div>
+                </div>
+                <div class="spec-card reveal">
+                    <div class="spec-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Laser Treatments</h3>
+                    <div class="spec-desc">Advanced laser-based skin rejuvenation, pigmentation correction, scar treatment, and hair reduction.</div>
+                </div>
+                <div class="spec-card reveal">
+                    <div class="spec-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h3>Cosmetology</h3>
+                    <div class="spec-desc">Chemical peels, anti-aging solutions, facial rejuvenation, fillers, and aesthetic treatments.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DERMELIXIR SERVICES -->
+    <section class="section-padding bg-light-green">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Derm Elixir Services</h2>
+                <p>Premium skin, hair, and laser treatments customized for you.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 reveal">
+                    <div class="service-category">
+                        <h3 class="text-green">Hair Treatments</h3>
+                        <ul class="service-list">
+                            <li>Scalp Treatment</li><li>PRP Hair Therapy</li><li>GFC Therapy</li><li>Mesotherapy</li><li>Exosome Therapy</li><li>Stem Cell Therapy</li><li>Alopecia Areata Treatment</li><li>Hair & Scalp Infection</li><li>Eyebrow Transplant</li><li>Hair Transplant</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal" style="transition-delay: 0.2s">
+                    <div class="service-category" style="border-color: var(--secondary);">
+                        <h3 class="text-gold">Skin Treatments</h3>
+                        <ul class="service-list">
+                            <li>Botox & Fillers</li><li>Chemical Peel</li><li>Skin Pigmentation</li><li>Facial PRP</li><li>IV Boosters</li><li>Acne & Pimples</li><li>Cosmetic Correction</li><li>Skin Infections</li><li>Vitiligo Treatment</li><li>Mole & Tag Removal</li><li>HydraFacial MD</li><li>OxyPod Hydrafacial</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal" style="transition-delay: 0.4s">
+                    <div class="service-category">
+                        <h3 class="text-green">Laser Treatments</h3>
+                        <ul class="service-list">
+                            <li>Laser Hair Reduction</li><li>Skin Resurfacing</li><li>Pigmentation Removal</li><li>Tattoo Removal</li><li>Scar Reduction</li><li>HIFU</li><li>Melasma Treatment</li><li>RF Tightening</li><li>Excimer Laser For Vitiligo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEDIFACIAL PRICING -->
+    <section class="section-padding" id="pricing">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>MediFacial Pricing</h2>
+                <p>Transparent pricing for our premium Medifacial services. Note: Prices indicated are "Starting From".</p>
+            </div>
+            <div class="pricing-grid reveal">
+                <div class="price-card"><div class="price-name">HydraFacial</div><div class="price-val"><span>Starting From</span>₹2,499</div></div>
+                <div class="price-card"><div class="price-name">Insta Glow Facial</div><div class="price-val"><span>Starting From</span>₹2,499</div></div>
+                <div class="price-card"><div class="price-name">Meso Glow Facial</div><div class="price-val"><span>Starting From</span>₹2,499</div></div>
+                <div class="price-card"><div class="price-name">Deep Cleansing Facial</div><div class="price-val"><span>Starting From</span>₹1,999</div></div>
+                <div class="price-card"><div class="price-name">Korean Glass MediFacial</div><div class="price-val"><span>Starting From</span>₹3,499</div></div>
+                <div class="price-card"><div class="price-name">Exosome MediFacial</div><div class="price-val"><span>Starting From</span>₹2,999</div></div>
+                <div class="price-card"><div class="price-name">Pink Peel MediFacial</div><div class="price-val"><span>Starting From</span>₹4,499</div></div>
+                <div class="price-card"><div class="price-name">Fire & Ice MediFacial</div><div class="price-val"><span>Starting From</span>₹6,499</div></div>
+                <div class="price-card"><div class="price-name">BB Glow</div><div class="price-val"><span>Starting From</span>₹2,499</div></div>
+                <div class="price-card"><div class="price-name">10-Step European</div><div class="price-val"><span>Starting From</span>₹4,499</div></div>
+                <div class="price-card" style="border-color: var(--secondary); background: #FFFDF0;"><div class="price-name text-gold">Derm Elixir Signature</div><div class="price-val"><span>Starting From</span>₹4,999</div></div>
+                <div class="price-card"><div class="price-name">Good Gene MediFacial</div><div class="price-val"><span>Starting From</span>₹2,499</div></div>
+                <div class="price-card"><div class="price-name">Radiance Revival</div><div class="price-val"><span>Starting From</span>₹4,499</div></div>
+                <div class="price-card"><div class="price-name">Barrier Repair Facial</div><div class="price-val"><span>Starting From</span>₹2,999</div></div>
+                <div class="price-card"><div class="price-name">Derma Bright</div><div class="price-val"><span>Starting From</span>₹2,499</div></div>
+                <div class="price-card"><div class="price-name">Summer MediFacial</div><div class="price-val"><span>Starting From</span>₹2,999</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TPA & INSURANCE -->
+    <section class="tpa-section reveal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Empowering Care With Insurance</h2>
+                <p>We are empanelled with leading insurance providers and government schemes to offer you a hassle-free, cashless treatment experience.</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="ayushman-card">
+                        <h3><i class="fa-solid fa-shield-heart"></i> Ayushman Bharat PM-JAY Accepted</h3>
+                        <p class="mb-3">Eligible Procedures Include:</p>
+                        <ul class="ayushman-list">
+                            <li>Kidney Stone Surgery</li>
+                            <li>Bladder Stone Surgery</li>
+                            <li>Hydrocele Surgery</li>
+                            <li>Varicocele Surgery</li>
+                            <li>Other Eligible Urology Procedures</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="mb-4 text-gold" style="font-family:'Outfit';">Cashless Insurance Available via TPAs</h4>
+            <div class="insurance-logos">
+                <div class="insurance-logo">Medi Assist</div>
+                <div class="insurance-logo">ACKO</div>
+                <div class="insurance-logo">Vidal Health</div>
+                <div class="insurance-logo">FHPL</div>
+                <div class="insurance-logo">SBI General</div>
+                <div class="insurance-logo">Tata AIG</div>
+                <div class="insurance-logo">HDFC ERGO</div>
+                <div class="insurance-logo">Niva Bupa</div>
+                <div class="insurance-logo">Universal Sompo</div>
+                <div class="insurance-logo">Health India</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="section-padding" id="gallery">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Our Facilities</h2>
+                <p>Take a glimpse into our world-class infrastructure and treatment centres.</p>
+            </div>
+            
+            <div class="tab-buttons reveal">
+                <button class="tab-btn active" onclick="openGalleryTab('tab-hospital', this)">Hospital</button>
+                <button class="tab-btn" onclick="openGalleryTab('tab-urology', this)">Urology Centre</button>
+                <button class="tab-btn" onclick="openGalleryTab('tab-derm', this)">Dermelixir</button>
+            </div>
+
+            <div id="tab-hospital" class="tab-content active reveal">
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=500" alt="Hospital 1"></div>
+                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=500" alt="Hospital 2"></div>
+                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1538108149393-cebb47ac1136?auto=format&fit=crop&q=80&w=500" alt="Hospital 3"></div>
+                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1512675828443-4f454c42253a?auto=format&fit=crop&q=80&w=500" alt="Hospital 4"></div>
+                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=500" alt="Hospital 5"></div>
+                </div>
+            </div>
+            <div id="tab-urology" class="tab-content">
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=500" alt="Urology 1"></div>
+                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=500" alt="Urology 2"></div>
+                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=500" alt="Urology 3"></div>
+                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?auto=format&fit=crop&q=80&w=500" alt="Urology 4"></div>
+                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1584516150909-c43483ee7932?auto=format&fit=crop&q=80&w=500" alt="Urology 5"></div>
+                </div>
+            </div>
+            <div id="tab-derm" class="tab-content">
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=500" alt="Derm 1"></div>
+                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=500" alt="Derm 2"></div>
+                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=500" alt="Derm 3"></div>
+                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=500" alt="Derm 4"></div>
+                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&q=80&w=500" alt="Derm 5"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section class="section-padding bg-light-green" id="reviews">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Patient Experiences</h2>
+                <p>Hear from those who have experienced our care.</p>
+            </div>
+            
+            <div class="tab-buttons reveal">
+                <button class="tab-btn active" onclick="switchReviewCategory('urology', this)"><i class="fa-solid fa-stethoscope"></i> Urology Reviews</button>
+                <button class="tab-btn" onclick="switchReviewCategory('derm', this)"><i class="fa-solid fa-wand-magic-sparkles"></i> Dermelixir Reviews</button>
+            </div>
+
+            <div class="review-slider-container reveal">
+                <div class="review-track" id="reviewTrack">
+                    <!-- Injected via JS -->
+                </div>
+                <div class="slider-dots" id="reviewDots">
+                    <!-- Injected via JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPOINTMENT CENTRE -->
+    <section class="section-padding" id="appointment">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Book Your Consultation</h2>
+                <p>Schedule your visit with our specialists seamlessly.</p>
+            </div>
+            <div class="row g-4">
+                <!-- Urology Form -->
+                <div class="col-lg-6 reveal-left">
+                    <div class="appointment-form">
+                        <h3 class="form-title text-green">Urology & Andrology</h3>
+                        <p class="form-doc">Doctor: Dr. Puneet Singh</p>
+                        <form id="urologyForm" onsubmit="submitForm(event, 'urology')">
+                            <div class="form-group"><input type="text" id="u_name" class="form-control" placeholder="Patient Name" required></div>
+                            <div class="form-group"><input type="number" id="u_age" class="form-control" placeholder="Age" required></div>
+                            <div class="form-group"><input type="tel" id="u_mobile" class="form-control" placeholder="Mobile Number" required></div>
+                            <div class="form-group"><input type="date" id="u_date" class="form-control" required></div>
+                            <div class="form-group"><textarea id="u_prob" class="form-control" rows="3" placeholder="Problem Description (Optional)"></textarea></div>
+                            <button type="submit" class="btn-premium form-submit">Book via WhatsApp</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Dermelixir Form -->
+                <div class="col-lg-6 reveal-right">
+                    <div class="appointment-form" style="border-color: var(--secondary);">
+                        <h3 class="form-title text-gold">Derm Elixir</h3>
+                        <p class="form-doc">Doctor: Dr. Megha Pundir Singh</p>
+                        <form id="dermForm" onsubmit="submitForm(event, 'derm')">
+                            <div class="form-group"><input type="text" id="d_name" class="form-control" placeholder="Patient Name" required></div>
+                            <div class="form-group"><input type="number" id="d_age" class="form-control" placeholder="Age" required></div>
+                            <div class="form-group"><input type="tel" id="d_mobile" class="form-control" placeholder="Mobile Number" required></div>
+                            <div class="form-group"><input type="date" id="d_date" class="form-control" required></div>
+                            <div class="form-group"><textarea id="d_prob" class="form-control" rows="3" placeholder="Problem Description" required></textarea></div>
+                            <button type="submit" class="btn-premium btn-gold form-submit">Book via WhatsApp</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL MEDIA -->
+    <section class="section-padding bg-light-green">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Connect With Us</h2>
+                <p>Join our digital community for health tips and updates.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 reveal-left">
+                    <div class="social-card">
+                        <h3 class="text-green">Gyandeep Medicare</h3>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/Gyandeepmedicare/" target="_blank" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/gyandeepmedicare/" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://twitter.com/GyanDeep0001" target="_blank" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.youtube.com/@GyanDeepMedicareHospital/" target="_blank" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="https://www.linkedin.com/in/gyan-deep-undefined-460a5b2a9/" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://in.pinterest.com/gyandeepmedicarehospital/" target="_blank" class="social-icon"><i class="fa-brands fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 reveal-right">
+                    <div class="social-card" style="border-color: var(--secondary);">
+                        <h3 class="text-gold">Derm Elixir</h3>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/DrMeghapundir/" target="_blank" class="social-icon" style="color: var(--secondary);"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/derm.elixir/" target="_blank" class="social-icon" style="color: var(--secondary);"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/channel/UC6MrvLrv2F_te8tPKagfUSg" target="_blank" class="social-icon" style="color: var(--secondary);"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section-padding" id="contact">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-5 reveal-left">
+                    <div class="section-title text-start mb-4">
+                        <h2>Get In Touch</h2>
+                        <p>We are here to assist you with world-class healthcare.</p>
+                    </div>
+                    <div class="contact-info-box">
+                        <div class="contact-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>N1/66-G3, Nagwa, Samne Ghat<br>Varanasi – 221005</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <h4>Hospital Contact</h4>
+                                <p>0542-2366105<br>0542-2366107</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <div>
+                                <h4>WhatsApp Consult</h4>
+                                <p>Urology: +91 8824998491<br>Dermelixir: +91 8003767830</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p>gyandeepmedicare@gmail.com<br>dermelixirvns@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 reveal-right">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.8979034914796!2d83.01187259999999!3d25.2740197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e336c645d6b6b%3A0x113ee64e6f38fa11!2sGyandeep%20Medicare%20Hospital!5e0!3m2!1sen!2sin!4v1781585072854!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <img src="https://placehold.co/150x150/FFFFFF/0A7A4B?text=Logo" alt="Gyandeep Medicare Logo" class="footer-logo">
+                        <h2>GYANDEEP MEDICARE</h2>
+                        <p>Centre of Excellence</p>
+                    </div>
+                    <p>Delivering specialized healthcare through expert consultants, advanced treatment technologies, and patient-centered care.</p>
+                </div>
+                <div class="col-lg-2">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#specialities">Specialities</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Our Specialists</h4>
+                    <ul class="footer-links">
+                        <li><a href="javascript:void(0)" onclick="openModal('modalPuneet')">Dr. Puneet Singh (Urology)</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('modalMegha')">Dr. Megha Pundir Singh (Derm)</a></li>
+                    </ul>
+                    <h4 class="mt-4">Centres</h4>
+                    <ul class="footer-links">
+                        <li><a href="#specialities">Urology & Andrology</a></li>
+                        <li><a href="#specialities">Derm Elixir Clinic</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li><i class="fa-solid fa-phone me-2"></i> 0542-2366105</li>
+                        <li><i class="fa-solid fa-envelope me-2"></i> gyandeepmedicare@gmail.com</li>
+                        <li><i class="fa-solid fa-location-dot me-2"></i> N1/66-G3, Nagwa, Varanasi</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Gyandeep Medicare Hospital. All Rights Reserved. Designed for Excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS (Doctor Profiles) -->
+    <div class="modal-overlay" id="modalPuneet">
+        <div class="modal-content">
+            <i class="fa-solid fa-xmark close-modal" onclick="closeModal('modalPuneet')"></i>
+            <div class="text-center mb-4">
+                <h2 class="text-green">Dr. Puneet Singh</h2>
+                <h5 class="text-gold">MBBS, MS (General Surgery), M.Ch Urology</h5>
+            </div>
+            <p><strong>Designation:</strong> Consultant Urologist, Consultant Andrologist, Laparoscopic Surgeon.</p>
+            <p>Dr. Puneet Singh is a highly skilled Urologist heading the Urology & Andrology Centre at Gyandeep Medicare Hospital. With extensive training in complex urological procedures and laparoscopic surgeries, he is dedicated to providing minimally invasive and highly effective treatments for kidney, bladder, and prostate conditions.</p>
+            <h5 class="mt-4 mb-2">Consultation Timings:</h5>
+            <ul class="feature-list">
+                <li><i class="fa-regular fa-clock"></i> Monday - Saturday: 4 PM - 7 PM</li>
+                <li><i class="fa-regular fa-clock"></i> Sunday: 10 AM - 4 PM</li>
+            </ul>
+            <a href="#appointment" class="btn-premium w-100 mt-4" onclick="closeModal('modalPuneet')">Book Appointment</a>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalMegha">
+        <div class="modal-content">
+            <i class="fa-solid fa-xmark close-modal" onclick="closeModal('modalMegha')"></i>
+            <div class="text-center mb-4">
+                <h2 class="text-green">Dr. Megha Pundir Singh</h2>
+                <h5 class="text-gold">MBBS, MD Skin & VD</h5>
+            </div>
+            <p><strong>Designation:</strong> Consultant Dermatologist, Founder of Dermelixir</p>
+            <p><strong>Experience:</strong> 10+ Years | Ex-SR IMS BHU | Founder & Member of Aesthetic Dermatology Society</p>
+            <p>Dr. Megha Pundir Singh is a renowned Dermatologist and the driving force behind Derm Elixir. She brings over a decade of expertise in clinical dermatology, advanced laser treatments, and aesthetic cosmetology. Her approach focuses on personalized, evidence-based skin and hair care solutions.</p>
+            <h5 class="mt-4 mb-2">Consultation Timings:</h5>
+            <ul class="feature-list">
+                <li><i class="fa-regular fa-clock"></i> Monday - Saturday: 4 PM - 7 PM</li>
+                <li><i class="fa-regular fa-clock"></i> Sunday: 10 AM - 4 PM</li>
+            </ul>
+            <a href="#appointment" class="btn-premium btn-gold w-100 mt-4" onclick="closeModal('modalMegha')">Book Appointment</a>
+        </div>
+    </div>
+
+    <!-- FLOATING WHATSAPP CTA -->
+    <div class="floating-ctas">
+        <!-- Gyandeep Urology Placeholder -->
+        <a href="https://wa.me/918824998491" target="_blank" class="float-btn-round" title="Urology Consult">
+            <img src="https://placehold.co/100x100/0A7A4B/FFFFFF?text=Uro" alt="Urology Chat Placeholder" class="dummy-chat-logo">
+        </a>
+        <!-- Dermelixir Placeholder -->
+        <a href="https://wa.me/918003767830" target="_blank" class="float-btn-round" title="Dermelixir Consult">
+            <img src="https://placehold.co/100x100/E8B923/FFFFFF?text=Derm" alt="Dermelixir Chat Placeholder" class="dummy-chat-logo">
+        </a>
+    </div>
+
+    <!-- AI CHATBOT -->
+    <div class="chatbot-container">
+        <button class="chat-toggle" id="chatToggle"><i class="fa-solid fa-robot"></i></button>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                Gyandeep AI Assistant
+                <i class="fa-solid fa-chevron-down close-chat" id="closeChat"></i>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="chat-msg msg-bot">Hello! I am the Gyandeep AI Assistant. How can I help you today regarding our Hospital, Urology, or Dermelixir treatments?</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Type your question..." onkeypress="handleChatEnter(event)">
+                <button onclick="sendChatMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // --- Navbar Scroll Effect ---
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // --- Mobile Menu ---
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => navLinks.classList.remove('active'));
+        });
+
+        // --- Hero Slider ---
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 2000);
+
+        // --- Scroll Reveal Animations ---
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+        const revealOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+        const revealObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // --- Floating Medical Particles Generator ---
+        const particlesContainer = document.getElementById('particles-container');
+        const icons = [
+            '<i class="fa-solid fa-dna"></i>',
+            '<i class="fa-solid fa-stethoscope"></i>',
+            '<i class="fa-solid fa-heart-pulse"></i>',
+            '<i class="fa-solid fa-microscope"></i>',
+            '<i class="fa-solid fa-staff-snake"></i>',
+            '<i class="fa-solid fa-syringe"></i>',
+            '<i class="fa-solid fa-shield-heart"></i>',
+            '<i class="fa-solid fa-hospital"></i>'
+        ];
+        // Inject random particles
+        for(let i=0; i<30; i++) {
+            let particle = document.createElement('div');
+            particle.classList.add('floating-particle');
+            particle.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.top = Math.random() * 5000 + 'px'; 
+            particle.style.fontSize = (Math.random() * 3 + 2) + 'rem';
+            particle.style.animationDelay = (Math.random() * 5) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // --- Modals ---
+        function openModal(id) { document.getElementById(id).classList.add('active'); }
+        function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+
+        // --- Gallery Tabs ---
+        function openGalleryTab(tabId, btn) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-buttons .tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('active');
+        }
+
+        // --- Reviews Data & Slider ---
+        const reviews = {
+            urology: [
+                { name: "Shivam Sahani", text: "Dr. Puneet Singh is an exceptional urologist. His expertise, compassionate approach, and clear communication made me feel comfortable throughout my treatment. Highly recommended." },
+                { name: "Aakash Yadav", text: "The doctors are highly skilled, polite, and professional. The hospital is clean, well-maintained, and staff is cooperative. I would definitely recommend Gyandeep Medicare." },
+                { name: "Suresh Ram", text: "Dr. Puneet Singh is a highly skilled specialist. Gyandeep Medicare Hospital is one of the most trusted places in Varanasi for urology and advanced patient care." }
+            ],
+            derm: [
+                { name: "Soni Singh", text: "Dr. Megha Singh provides personalized treatment and genuine care. I noticed visible improvement in my skin within a short period. Her approach is truly impressive." },
+                { name: "Shubham Verma", text: "I visited Dermelixir for a hair fall consultation and experienced significant improvement after treatment. Highly recommended for skin and hair concerns." },
+                { name: "Vishal Maurya", text: "Gyandeep Medicare Hospital offers excellent treatment for skin-related conditions. The facility is clean, organized, and supported by a dedicated team." },
+                { name: "Pankaj Kumar", text: "The hospital provides very good facilities and professional care. I would strongly recommend it for anyone dealing with skin, hair, or urology problems." },
+                { name: "Priyanka Yadav", text: "Wonderful experience. The doctors listen carefully to patients, and the staff is cooperative, professional, and caring." }
+            ]
+        };
+
+        let currentReviewCategory = 'urology';
+        let reviewIndex = 0;
+        let reviewInterval;
+
+        function renderReviews() {
+            const track = document.getElementById('reviewTrack');
+            const dots = document.getElementById('reviewDots');
+            track.innerHTML = ''; dots.innerHTML = '';
+            const list = reviews[currentReviewCategory];
+            
+            list.forEach((rev, idx) => {
+                const card = document.createElement('div');
+                card.className = 'review-card';
+                card.innerHTML = `
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-text">${rev.text}</p>
+                    <h4 class="review-author">— ${rev.name}</h4>
+                `;
+                track.appendChild(card);
+
+                const dot = document.createElement('div');
+                dot.className = idx === 0 ? 'dot active' : 'dot';
+                dot.onclick = () => goToReview(idx);
+                dots.appendChild(dot);
+            });
+            track.style.transform = `translateX(0%)`;
+            reviewIndex = 0;
+            
+            clearInterval(reviewInterval);
+            reviewInterval = setInterval(nextReview, 3000);
+        }
+
+        function switchReviewCategory(cat, btn) {
+            currentReviewCategory = cat;
+            document.querySelectorAll('#reviews .tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderReviews();
+        }
+
+        function goToReview(idx) {
+            reviewIndex = idx;
+            document.getElementById('reviewTrack').style.transform = `translateX(-${idx * 100}%)`;
+            updateReviewDots();
+            clearInterval(reviewInterval);
+            reviewInterval = setInterval(nextReview, 3000);
+        }
+
+        function nextReview() {
+            reviewIndex = (reviewIndex + 1) % reviews[currentReviewCategory].length;
+            document.getElementById('reviewTrack').style.transform = `translateX(-${reviewIndex * 100}%)`;
+            updateReviewDots();
+        }
+
+        function updateReviewDots() {
+            document.querySelectorAll('#reviewDots .dot').forEach((d, i) => {
+                d.classList.toggle('active', i === reviewIndex);
+            });
+        }
+
+        // Initialize Reviews
+        renderReviews();
+
+        // --- Appointment Form to WhatsApp ---
+        function submitForm(e, type) {
+            e.preventDefault();
+            let num = type === 'urology' ? '918824998491' : '918003767830';
+            let prefix = type === 'urology' ? 'u_' : 'd_';
+            let doctor = type === 'urology' ? 'Dr. Puneet Singh' : 'Dr. Megha Pundir Singh';
+            
+            let name = document.getElementById(prefix + 'name').value;
+            let age = document.getElementById(prefix + 'age').value;
+            let mobile = document.getElementById(prefix + 'mobile').value;
+            let date = document.getElementById(prefix + 'date').value;
+            let prob = document.getElementById(prefix + 'prob').value;
+
+            let msg = `*New Appointment Request*%0A%0A*Doctor:* ${doctor}%0A*Patient Name:* ${name}%0A*Age:* ${age}%0A*Mobile:* ${mobile}%0A*Preferred Date:* ${date}%0A*Problem:* ${prob}`;
+            
+            window.open(`https://wa.me/${num}?text=${msg}`, '_blank');
+        }
+
+        // --- AI Chatbot Logic ---
+        const chatToggle = document.getElementById('chatToggle');
+        const chatWindow = document.getElementById('chatWindow');
+        const closeChat = document.getElementById('closeChat');
+        const chatBody = document.getElementById('chatBody');
+        const chatInput = document.getElementById('chatInput');
+
+        chatToggle.addEventListener('click', () => chatWindow.classList.add('active'));
+        closeChat.addEventListener('click', () => chatWindow.classList.remove('active'));
+
+        function handleChatEnter(e) {
+            if(e.key === 'Enter') sendChatMessage();
+        }
+
+        function sendChatMessage() {
+            let text = chatInput.value.trim();
+            if(!text) return;
+            
+            appendMessage(text, 'user');
+            chatInput.value = '';
+            
+            setTimeout(() => {
+                let reply = getBotResponse(text.toLowerCase());
+                appendMessage(reply, 'bot');
+            }, 600);
+        }
+
+        function appendMessage(text, sender) {
+            let msgDiv = document.createElement('div');
+            msgDiv.className = `chat-msg msg-${sender}`;
+            msgDiv.innerText = text;
+            chatBody.appendChild(msgDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function getBotResponse(input) {
+            if(input.includes('dr') || input.includes('puneet') || input.includes('urology')) {
+                return "Dr. Puneet Singh (MBBS, MS, M.Ch Urology) heads our Urology & Andrology Centre. He specializes in kidney stones, prostate issues, and laparoscopic surgery. You can book an appointment in the Booking section.";
+            } else if(input.includes('megha') || input.includes('derm') || input.includes('skin') || input.includes('hair')) {
+                return "Dr. Megha Pundir Singh (MBBS, MD Skin & VD) is the founder of Derm Elixir. She provides expert care for acne, hair fall, PRP, lasers, and cosmetology. You can book a consultation via WhatsApp.";
+            } else if(input.includes('price') || input.includes('cost') || input.includes('facial') || input.includes('medifacial')) {
+                return "Our Premium MediFacials start from ₹1,999. For example, HydraFacial MD and Insta Glow start at ₹2,499. Please check the Pricing section for full details.";
+            } else if(input.includes('book') || input.includes('appointment')) {
+                return "To book an appointment, please scroll to our 'Book Your Consultation' section to fill the form, or use the floating WhatsApp buttons on the bottom right.";
+            } else if(input.includes('address') || input.includes('location')) {
+                return "We are located at: N1/66-G3, Nagwa, Samne Ghat, Varanasi – 221005.";
+            } else if(input.includes('contact') || input.includes('phone') || input.includes('call')) {
+                return "Hospital Numbers: 0542-2366105 / 2366107. Urology WhatsApp: 8824998491. Dermelixir WhatsApp: 8003767830.";
+            } else if(input.includes('ayushman') || input.includes('insurance') || input.includes('tpa')) {
+                return "Yes! We accept Ayushman Bharat PM-JAY for eligible urology procedures and offer cashless insurance via major TPAs like ACKO, SBI General, Tata AIG, etc.";
+            } else {
+                return "Thank you for reaching out. For specific medical queries or details not available here, please contact Gyandeep Medicare Hospital directly at 0542-2366105 or via the WhatsApp buttons.";
+            }
+        }
+    </script>
+</body>
+</html>
